@@ -1,14 +1,24 @@
 import 'package:facilitator/config/router/routes.dart';
 import 'package:facilitator/features/auth/presentation/widgets/facilitator_card_widget.dart';
-import 'package:facilitator/features/auth/presentation/widgets/navbar_widget.dart';
+import 'package:facilitator/features/home/presentation/widgets/navbar_widget.dart';
+import 'package:facilitator/features/home/presentation/widgets/menu_widget.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const MenuWidget(),
+      key: scaffoldKey,
       body: SafeArea(
         child: ListView(
           children: [
@@ -16,7 +26,9 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
                 children: [
-                  const NavbarWidget(),
+                  NavbarWidget(
+                    scaffoldKey: scaffoldKey,
+                  ),
                   const SizedBox(height: 20),
                   GestureDetector(
                     onTap: () {

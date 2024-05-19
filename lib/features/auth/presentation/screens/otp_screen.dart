@@ -1,11 +1,12 @@
 import 'dart:async';
 
-import '../../../../app/widgets/primary_button.dart';
-import '../../../../config/router/routes.dart';
-import '../../../../core/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
+
+import '../../../../app/widgets/primary_button.dart';
+import '../../../../config/router/routes.dart';
+import '../../../../core/widgets/text_widget.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({
@@ -177,8 +178,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   PrimaryButton(
                       label: "Verify",
                       onPressed: () {
-                        Navigator.pushNamed(
-                            context, Routes.verificationSuccessful);
+                        Navigator.pushNamed(context, Routes.resetPassword);
                       },
                       isEnabled: otp.length == 4),
                   const SizedBox(

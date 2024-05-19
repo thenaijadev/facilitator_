@@ -22,6 +22,11 @@ class ChannelOverviewCard extends StatelessWidget {
           context: context, inputWidth: 390),
       padding: const EdgeInsets.only(right: 20, left: 20, top: 25.5),
       decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xFF030E4F), Color(0xFF0720B5)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
         color: AppColors.primary,
         borderRadius: BorderRadius.all(
           Radius.circular(10),

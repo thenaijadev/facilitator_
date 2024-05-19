@@ -4,54 +4,30 @@ import 'package:facilitator/core/utils/size_config.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
 import 'package:facilitator/features/auth/presentation/widgets/channel_overview_card_widget.dart';
 import 'package:facilitator/features/auth/presentation/widgets/content_list_tile_widget.dart';
-import 'package:facilitator/features/auth/presentation/widgets/navbar_widget.dart';
-import 'package:facilitator/features/auth/presentation/widgets/profile_header_card_widget.dart';
+import 'package:facilitator/features/home/presentation/widgets/menu_widget.dart';
+import 'package:facilitator/features/home/presentation/widgets/navbar_widget.dart';
+import 'package:facilitator/features/profile/presentation/widgets/profile_header_card_widget.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreenTwo extends StatelessWidget {
-  const HomeScreenTwo({super.key});
+class ChannelOverviewScreen extends StatefulWidget {
+  const ChannelOverviewScreen({super.key});
+
+  @override
+  State<ChannelOverviewScreen> createState() => _ChannelOverviewScreenState();
+}
+
+class _ChannelOverviewScreenState extends State<ChannelOverviewScreen> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
+      drawer: const MenuWidget(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppColors.primary,
         onPressed: () {
-          showModalBottomSheet(
-              context: context,
-              builder: (BuildContext context) {
-                return Container(
-                  height: SizeConfig.getProportionateScreenHeight(
-                      context: context, inputHeight: 159),
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(12),
-                      topRight: Radius.circular(12),
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      ListTile(
-                        leading: Image.asset('assets/images/add_square.png'),
-                        title: const TextWidget(
-                          text: 'Create a Content',
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      ListTile(
-                        leading: Image.asset('assets/images/add_square.png'),
-                        title: const TextWidget(
-                          text: 'Create a Content',
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      )
-                    ],
-                  ),
-                );
-              });
+          showBottomSheet(context: context);
         },
         child: const Icon(Icons.add),
       ),
@@ -62,7 +38,9 @@ class HomeScreenTwo extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  const NavbarWidget(),
+                  NavbarWidget(
+                    scaffoldKey: scaffoldKey,
+                  ),
                   const SizedBox(height: 30),
                   GestureDetector(
                     onTap: () {
@@ -149,5 +127,43 @@ class HomeScreenTwo extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void showBottomSheet({required BuildContext context}) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            height: SizeConfig.getProportionateScreenHeight(
+                context: context, inputHeight: 159),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(12),
+                topRight: Radius.circular(12),
+              ),
+            ),
+            child: Column(
+              children: [
+                ListTile(
+                  leading: Image.asset('assets/images/add_square.png'),
+                  title: const TextWidget(
+                    text: 'Create a Content',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                ListTile(
+                  leading: Image.asset('assets/images/add_square.png'),
+                  title: const TextWidget(
+                    text: 'Create a Content',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                )
+              ],
+            ),
+          );
+        });
   }
 }

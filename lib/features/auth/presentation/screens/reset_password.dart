@@ -1,8 +1,10 @@
+import 'package:facilitator/config/router/routes.dart';
+import 'package:flutter/material.dart';
+
 import '../../../../app/widgets/primary_button.dart';
 import '../../../../core/validator/validator.dart';
 import '../../../../core/widgets/text_widget.dart';
 import '../widgets/input_field_widget.dart';
-import 'package:flutter/material.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({super.key});
@@ -129,7 +131,9 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
             ),
             PrimaryButton(
                 label: "Submit",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, Routes.login);
+                },
                 isEnabled: passwordIsValid && confirmPasswordIsValids)
           ],
         )),

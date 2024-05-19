@@ -2,9 +2,8 @@ import 'package:facilitator/config/router/routes.dart';
 import 'package:facilitator/core/utils/size_config.dart';
 import 'package:facilitator/core/widgets/horizontal_divider.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
-import 'package:facilitator/features/auth/presentation/widgets/fab_row_two.dart';
-import 'package:facilitator/features/auth/presentation/widgets/profile_action_widget.dart';
-import 'package:facilitator/features/auth/presentation/widgets/profile_header.dart';
+import 'package:facilitator/features/profile/presentation/widgets/profile_action_widget.dart';
+import 'package:facilitator/features/profile/presentation/widgets/profile_header.dart';
 import 'package:flutter/material.dart';
 
 class FacilitatorProfileScreen extends StatefulWidget {
@@ -118,82 +117,69 @@ class _FacilitatorProfileScreenState extends State<FacilitatorProfileScreen> {
       bottomSheet: BottomSheet(
         onClosing: () {},
         builder: (context) {
-          return Stack(
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 30),
-                width: double.infinity,
-                height: SizeConfig.getProportionateScreenHeight(
-                    context: context, inputHeight: 700),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
+          return Container(
+            padding: const EdgeInsets.symmetric(vertical: 30),
+            width: double.infinity,
+            height: SizeConfig.getProportionateScreenHeight(
+                context: context, inputHeight: 700),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+            ),
+            child: ListView(
+              children: [
+                const ProfileHeader(),
+                const HorizontalDivider(
+                  paddingVertical: 20,
+                ),
+                Column(
+                  children: List.generate(
+                    items.length,
+                    (index) => index == 0
+                        ? ProfileActionWidget(
+                            onTap: () {},
+                            icon: items[index]["icon"],
+                            label: items[index]["label"],
+                            trailing: Transform.scale(
+                              scale: .8,
+                              child: Row(
+                                children: [
+                                  Switch(
+                                    inactiveThumbColor:
+                                        Theme.of(context).colorScheme.primary,
+                                    activeTrackColor:
+                                        Theme.of(context).colorScheme.primary,
+                                    value: appNotificationEnabled,
+                                    onChanged: ((value) {
+                                      setState(() {
+                                        appNotificationEnabled = value;
+                                      });
+                                    }),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  TextWidget(
+                                    text: appNotificationEnabled ? "On" : "Off",
+                                    fontSize: 16,
+                                  )
+                                ],
+                              ),
+                            ),
+                          )
+                        : ProfileActionWidget(
+                            icon: items[index]["icon"],
+                            label: items[index]["label"],
+                            trailing: items[index]["trailing"],
+                            onTap: items[index]["onTap"],
+                          ),
                   ),
                 ),
-                child: ListView(
-                  children: [
-                    const ProfileHeader(),
-                    const HorizontalDivider(
-                      paddingVertical: 20,
-                    ),
-                    Column(
-                      children: List.generate(
-                        items.length,
-                        (index) => index == 0
-                            ? ProfileActionWidget(
-                                onTap: () {},
-                                icon: items[index]["icon"],
-                                label: items[index]["label"],
-                                trailing: Transform.scale(
-                                  scale: .8,
-                                  child: Row(
-                                    children: [
-                                      Switch(
-                                        inactiveThumbColor: Theme.of(context)
-                                            .colorScheme
-                                            .primary,
-                                        activeTrackColor: Theme.of(context)
-                                            .colorScheme
-                                            .primary,
-                                        value: appNotificationEnabled,
-                                        onChanged: ((value) {
-                                          setState(() {
-                                            appNotificationEnabled = value;
-                                          });
-                                        }),
-                                      ),
-                                      const SizedBox(
-                                        width: 10,
-                                      ),
-                                      TextWidget(
-                                        text: appNotificationEnabled
-                                            ? "On"
-                                            : "Off",
-                                        fontSize: 16,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              )
-                            : ProfileActionWidget(
-                                icon: items[index]["icon"],
-                                label: items[index]["label"],
-                                trailing: items[index]["trailing"],
-                                onTap: items[index]["onTap"],
-                              ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const Positioned(
-                bottom: 30,
-                right: 20,
-                child: FabRowTwo(),
-              )
-            ],
+              ],
+            ),
           );
         },
       ),

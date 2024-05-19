@@ -1,6 +1,6 @@
 import 'package:facilitator/core/utils/size_config.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
-import 'package:facilitator/features/auth/presentation/widgets/profile_header_card_widget.dart';
+import 'package:facilitator/features/profile/presentation/widgets/profile_header_card_widget.dart';
 import 'package:flutter/material.dart';
 
 class FacilitatorCard extends StatelessWidget {

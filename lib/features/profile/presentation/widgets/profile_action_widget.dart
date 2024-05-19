@@ -1,5 +1,6 @@
-import '../../../../core/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/widgets/text_widget.dart';
 
 class ProfileActionWidget extends StatelessWidget {
   const ProfileActionWidget(
@@ -33,6 +34,7 @@ class ProfileActionWidget extends StatelessWidget {
                 TextWidget(
                   text: label,
                   fontSize: 20,
+                  color: label == "Log out" ? Colors.red : null,
                 ),
               ],
             ),

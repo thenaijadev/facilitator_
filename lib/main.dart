@@ -1,6 +1,4 @@
-import 'package:facilitator/config/router/app_router.dart';
-import 'package:facilitator/config/router/routes.dart';
-import 'package:facilitator/config/theme/light_theme.dart';
+import 'package:facilitator/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -22,25 +20,4 @@ appInitialization() async {
   ]);
   // await initializeDependencies();
   FlutterNativeSplash.remove();
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final appRouter = AppRouter();
-    return GestureDetector(
-        onTap: () {
-          FocusManager.instance.primaryFocus?.unfocus();
-        },
-        child: MaterialApp(
-          theme: lightTheme(),
-          debugShowCheckedModeBanner: false,
-          // initialRoute: Routes.login,
-          initialRoute: Routes.splashScreen,
-
-          onGenerateRoute: appRouter.onGenerateRoute,
-        ));
-  }
 }
