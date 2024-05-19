@@ -2,7 +2,6 @@ import 'package:facilitator/config/router/routes.dart';
 import 'package:facilitator/features/auth/presentation/widgets/facilitator_card_widget.dart';
 import 'package:facilitator/features/auth/presentation/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

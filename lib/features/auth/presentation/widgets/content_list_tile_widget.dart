@@ -19,9 +19,9 @@ class ContentListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             color: Color.fromRGBO(3, 14, 79, 0.1),
             blurRadius: 10,

@@ -21,6 +21,8 @@ class Routes {
 //Home
   static const String home = '/home';
   static const String homeScreenTwo = '/homeScreenTwo';
+  //facilitator profile
+  static const String facilitatorProfileScreen = '/facilitatorProfileScreen';
 
   //Store
   static const String firstStoreCreation = '/firstStoreCreation';
