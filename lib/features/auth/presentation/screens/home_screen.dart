@@ -1,6 +1,8 @@
+import 'package:facilitator/config/router/routes.dart';
 import 'package:facilitator/features/auth/presentation/widgets/facilitator_card_widget.dart';
 import 'package:facilitator/features/auth/presentation/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,21 +19,25 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   const NavbarWidget(),
                   const SizedBox(height: 20),
-                  FacilitatorCard(
-                    name: 'John Doe',
-                    profileImage: 'assets/images/John_doe.png',
-                    businesstitle: 'Business Facilitator',
-                    title: 'How to run a coffee BUSINESS in 2023',
-                    time: '19:00',
-                    numberfLikes: '200',
-                    numberOfComments: '100',
-                    numberOfViews: '133k views',
-                    lastUploaded: '5 month ago',
-                    businessVideo: 'assets/images/coffee_shop.jpg',
-                    onTap: () {},
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes.homeScreenTwo);
+                    },
+                    child: const FacilitatorCard(
+                      name: 'John Doe',
+                      profileImage: 'assets/images/John_doe.png',
+                      businesstitle: 'Business Facilitator',
+                      title: 'How to run a coffee BUSINESS in 2023',
+                      time: '19:00',
+                      numberfLikes: '200',
+                      numberOfComments: '100',
+                      numberOfViews: '133k views',
+                      lastUploaded: '5 month ago',
+                      businessVideo: 'assets/images/coffee_shop.jpg',
+                    ),
                   ),
                   const SizedBox(height: 20),
-                  FacilitatorCard(
+                  const FacilitatorCard(
                     name: 'John Doe',
                     profileImage: 'assets/images/John_doe.png',
                     businesstitle: 'Business Facilitator',
@@ -42,7 +48,6 @@ class HomeScreen extends StatelessWidget {
                     numberOfViews: '133k views',
                     lastUploaded: '5 month ago',
                     businessVideo: 'assets/images/coffee_shop.jpg',
-                    onTap: () {},
                   ),
                 ],
               ),

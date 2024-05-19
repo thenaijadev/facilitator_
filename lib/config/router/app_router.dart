@@ -1,4 +1,5 @@
 import 'package:facilitator/features/auth/presentation/screens/home_screen.dart';
+import 'package:facilitator/features/auth/presentation/screens/home_screen_two.dart';
 import 'package:facilitator/features/auth/presentation/screens/login_signup_screen.dart';
 import 'package:facilitator/features/auth/presentation/screens/splash_screen.dart';
 import 'package:facilitator/features/auth/presentation/screens/welcome_screen.dart';
@@ -56,6 +57,10 @@ class AppRouter {
       case Routes.home:
         return MaterialPageRoute(
           builder: (_) => const HomeScreen(),
+        );
+      case Routes.homeScreenTwo:
+        return MaterialPageRoute(
+          builder: (_) => const HomeScreenTwo(),
         );
 
       default:

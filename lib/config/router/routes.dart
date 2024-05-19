@@ -20,6 +20,7 @@ class Routes {
 
 //Home
   static const String home = '/home';
+  static const String homeScreenTwo = '/homeScreenTwo';
 
   //Store
   static const String firstStoreCreation = '/firstStoreCreation';
