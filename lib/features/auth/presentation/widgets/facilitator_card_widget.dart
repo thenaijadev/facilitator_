@@ -38,15 +38,16 @@ class FacilitatorCard extends StatelessWidget {
           context: context, inputHeight: 391),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.white,
-          boxShadow: const [
-            BoxShadow(
-              color: Color.fromRGBO(3, 14, 79, 0.1),
-              blurRadius: 10,
-              offset: Offset(5, 4),
-            )
-          ]),
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.white,
+        boxShadow: const [
+          BoxShadow(
+            color: Color.fromRGBO(3, 14, 79, 0.1),
+            blurRadius: 10,
+            offset: Offset(5, 4),
+          )
+        ],
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
