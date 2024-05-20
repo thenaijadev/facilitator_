@@ -23,6 +23,7 @@ class Routes {
   static const String homeScreenTwo = '/homeScreenTwo';
   //facilitator profile
   static const String facilitatorProfileScreen = '/facilitatorProfileScreen';
+  static const String myContentScreen = '/MyContentScreen';
 
   //Store
   static const String firstStoreCreation = '/firstStoreCreation';

@@ -8,6 +8,7 @@ import 'package:facilitator/features/home/presentation/widgets/menu_widget.dart'
 import 'package:facilitator/features/home/presentation/widgets/navbar_widget.dart';
 import 'package:facilitator/features/profile/presentation/widgets/profile_header_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ChannelOverviewScreen extends StatefulWidget {
   const ChannelOverviewScreen({super.key});
@@ -59,21 +60,26 @@ class _ChannelOverviewScreenState extends State<ChannelOverviewScreen> {
                     totalEarnings: '20000.00 NGN',
                   ),
                   const SizedBox(height: 30),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      TextWidget(
+                      const TextWidget(
                         text: 'My Contents',
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: AppColors.primary,
                       ),
-                      TextWidget(
-                        text: 'View All',
-                        fontSize: 12,
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.w600,
-                        color: Color.fromRGBO(244, 159, 28, 1),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, Routes.myContentScreen);
+                        },
+                        child: const TextWidget(
+                          text: 'View All',
+                          fontSize: 12,
+                          fontStyle: FontStyle.italic,
+                          fontWeight: FontWeight.w600,
+                          color: Color.fromRGBO(244, 159, 28, 1),
+                        ),
                       ),
                     ],
                   ),
@@ -156,7 +162,7 @@ class _ChannelOverviewScreenState extends State<ChannelOverviewScreen> {
                 ListTile(
                   leading: Image.asset('assets/images/add_square.png'),
                   title: const TextWidget(
-                    text: 'Create a Content',
+                    text: 'Create a Channel',
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                   ),

@@ -1,9 +1,10 @@
-import 'package:facilitator/features/auth/presentation/screens/facilitator_profile_screen.dart';
+import 'package:facilitator/features/profile/presentation/screens/facilitator_profile_screen.dart';
 import 'package:facilitator/features/home/presentation/screens/home_screen.dart';
 import 'package:facilitator/features/auth/presentation/screens/login_signup_screen.dart';
 import 'package:facilitator/features/auth/presentation/screens/splash_screen.dart';
 import 'package:facilitator/features/home/presentation/screens/welcome_screen.dart';
 import 'package:facilitator/features/home/presentation/screens/channel_overview_screen.dart';
+import 'package:facilitator/features/profile/presentation/screens/my_content.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/widgets/error_screen.dart';
@@ -63,11 +64,14 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const ChannelOverviewScreen(),
         );
-      case Routes.profile:
+      case Routes.facilitatorProfileScreen:
         return MaterialPageRoute(
           builder: (_) => const FacilitatorProfileScreen(),
         );
-
+      case Routes.myContentScreen:
+        return MaterialPageRoute(
+          builder: (_) => const MyContentScreen(),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => const ErrorScreen(),
