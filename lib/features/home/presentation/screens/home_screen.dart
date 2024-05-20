@@ -1,7 +1,7 @@
 import 'package:facilitator/config/router/routes.dart';
 import 'package:facilitator/features/auth/presentation/widgets/facilitator_card_widget.dart';
-import 'package:facilitator/features/home/presentation/widgets/navbar_widget.dart';
 import 'package:facilitator/features/home/presentation/widgets/menu_widget.dart';
+import 'package:facilitator/features/home/presentation/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: const FacilitatorCard(
                       name: 'John Doe',
                       profileImage: 'assets/images/John_doe.png',
-                      businesstitle: 'Business Facilitator',
+                      businesstitle: 'Business facilitator',
                       title: 'How to run a coffee BUSINESS in 2023',
                       time: '19:00',
                       numberfLikes: '200',
@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   const FacilitatorCard(
                     name: 'John Doe',
                     profileImage: 'assets/images/John_doe.png',
-                    businesstitle: 'Business Facilitator',
+                    businesstitle: 'Business facilitator',
                     title: 'How to run a coffee BUSINESS in 2023',
                     time: '19:00',
                     numberfLikes: '200',

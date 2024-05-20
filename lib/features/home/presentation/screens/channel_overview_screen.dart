@@ -59,10 +59,10 @@ class _ChannelOverviewScreenState extends State<ChannelOverviewScreen> {
                     totalEarnings: '20000.00 NGN',
                   ),
                   const SizedBox(height: 30),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      TextWidget(
+                      const TextWidget(
                         text: 'My Contents',
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -70,10 +70,12 @@ class _ChannelOverviewScreenState extends State<ChannelOverviewScreen> {
                       ),
                       TextWidget(
                         text: 'View All',
+                        onTap: () =>
+                            Navigator.pushNamed(context, Routes.myContent),
                         fontSize: 12,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w600,
-                        color: Color.fromRGBO(244, 159, 28, 1),
+                        color: const Color.fromRGBO(244, 159, 28, 1),
                       ),
                     ],
                   ),

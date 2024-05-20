@@ -1,9 +1,11 @@
 import 'package:facilitator/features/auth/presentation/screens/facilitator_profile_screen.dart';
-import 'package:facilitator/features/home/presentation/screens/home_screen.dart';
 import 'package:facilitator/features/auth/presentation/screens/login_signup_screen.dart';
 import 'package:facilitator/features/auth/presentation/screens/splash_screen.dart';
-import 'package:facilitator/features/home/presentation/screens/welcome_screen.dart';
+import 'package:facilitator/features/content/presentation/screens/my_content_screen.dart';
+import 'package:facilitator/features/content/presentation/screens/promote_content_screen.dart';
 import 'package:facilitator/features/home/presentation/screens/channel_overview_screen.dart';
+import 'package:facilitator/features/home/presentation/screens/home_screen.dart';
+import 'package:facilitator/features/home/presentation/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/widgets/error_screen.dart';
@@ -62,6 +64,15 @@ class AppRouter {
       case Routes.homeScreenTwo:
         return MaterialPageRoute(
           builder: (_) => const ChannelOverviewScreen(),
+        );
+      case Routes.myContent:
+        return MaterialPageRoute(
+          builder: (_) => const MyContentScreen(),
+        );
+
+      case Routes.promoteContent:
+        return MaterialPageRoute(
+          builder: (_) => const PromoteContentScreen(),
         );
       case Routes.profile:
         return MaterialPageRoute(
