@@ -76,10 +76,11 @@ class Routes {
 
   //Wallet
   static const String myWallet = '/myWallet';
-  static const String allTransactons = '/allTransactons';
+  static const String fundWallet = '/fundWallet';
   static const String transactionDetails = '/transactionDetails';
 
   //Content
   static const String myContent = '/myContent';
   static const String promoteContent = '/promoteContent';
+  static const String contentInfo = '/contentInfo';
 }

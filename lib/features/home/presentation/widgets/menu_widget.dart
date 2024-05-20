@@ -32,7 +32,9 @@ class _MenuWidgetState extends State<MenuWidget> {
           ),
           const NotificationMenuItem(),
           MenuItemWidget(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, Routes.myWallet);
+              },
               iconPath: "assets/images/wallet_1.png",
               label: "Wallet"),
           MenuItemWidget(

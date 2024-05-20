@@ -8,7 +8,6 @@ import 'package:facilitator/features/home/presentation/widgets/menu_widget.dart'
 import 'package:facilitator/features/home/presentation/widgets/navbar_widget.dart';
 import 'package:facilitator/features/profile/presentation/widgets/profile_header_card_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ChannelOverviewScreen extends StatefulWidget {
   const ChannelOverviewScreen({super.key});
@@ -45,8 +44,7 @@ class _ChannelOverviewScreenState extends State<ChannelOverviewScreen> {
                   const SizedBox(height: 30),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, Routes.facilitatorProfileScreen);
+                      Navigator.pushNamed(context, Routes.profile);
                     },
                     child: const ProfileHeaderCard(
                       profileImage: 'assets/images/John_doe.png',

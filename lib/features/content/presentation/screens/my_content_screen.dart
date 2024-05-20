@@ -1,4 +1,5 @@
 import 'package:facilitator/app/widgets/app_bar.dart';
+import 'package:facilitator/config/router/routes.dart';
 import 'package:facilitator/features/auth/presentation/widgets/content_list_tile_widget.dart';
 import 'package:facilitator/features/auth/presentation/widgets/input_field_widget.dart';
 import 'package:flutter/material.dart';
@@ -50,13 +51,18 @@ class _MyContentScreenState extends State<MyContentScreen> {
         child: ListView(
           children: List.generate(
             10,
-            (index) => const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: ContentListTile(
-                numberOfViews: '133k views',
-                dateUploaded: '5 months ago',
-                image: 'assets/images/party_jollof.png',
-                title: 'How to cook party Jollof',
+            (index) => Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.contentInfo);
+                },
+                child: const ContentListTile(
+                  numberOfViews: '133k views',
+                  dateUploaded: '5 months ago',
+                  image: 'assets/images/party_jollof.png',
+                  title: 'How to cook party Jollof',
+                ),
               ),
             ),
           ),

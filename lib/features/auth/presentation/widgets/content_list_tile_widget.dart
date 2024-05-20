@@ -69,7 +69,7 @@ class ContentListTile extends StatelessWidget {
                         child: Row(
                           children: [
                             Image.asset(
-                              "assets/images/pen_2.png",
+                              "assets/images/pen.png",
                               width: 24,
                             ),
                             const SizedBox(
@@ -90,8 +90,9 @@ class ContentListTile extends StatelessWidget {
                         child: Row(
                           children: [
                             Image.asset(
-                              "assets/images/tag_blue.png",
+                              "assets/images/tag.png",
                               width: 24,
+                              color: AppColors.primary,
                             ),
                             const SizedBox(
                               width: 40,
@@ -107,7 +108,7 @@ class ContentListTile extends StatelessWidget {
                       Row(
                         children: [
                           Image.asset(
-                            "assets/images/trash.png",
+                            "assets/images/trash_bin.png",
                             width: 24,
                           ),
                           const SizedBox(

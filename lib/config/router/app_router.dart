@@ -1,4 +1,3 @@
-import 'package:facilitator/features/auth/presentation/screens/facilitator_profile_screen.dart';
 import 'package:facilitator/features/auth/presentation/screens/login_signup_screen.dart';
 import 'package:facilitator/features/auth/presentation/screens/splash_screen.dart';
 import 'package:facilitator/features/content/presentation/screens/my_content_screen.dart';
@@ -6,6 +5,10 @@ import 'package:facilitator/features/content/presentation/screens/promote_conten
 import 'package:facilitator/features/home/presentation/screens/channel_overview_screen.dart';
 import 'package:facilitator/features/home/presentation/screens/home_screen.dart';
 import 'package:facilitator/features/home/presentation/screens/welcome_screen.dart';
+import 'package:facilitator/features/content/presentation/screens/content_info.dart';
+import 'package:facilitator/features/auth/presentation/screens/facilitator_profile_screen.dart';
+import 'package:facilitator/features/wallet/presentation/screens/fund_wallet.dart';
+import 'package:facilitator/features/wallet/presentation/screens/wallet.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/widgets/error_screen.dart';
@@ -81,6 +84,18 @@ class AppRouter {
       case Routes.myContentScreen:
         return MaterialPageRoute(
           builder: (_) => const MyContentScreen(),
+        );
+      case Routes.contentInfo:
+        return MaterialPageRoute(
+          builder: (_) => const ContentInfoScreen(),
+        );
+      case Routes.myWallet:
+        return MaterialPageRoute(
+          builder: (_) => const WalletScreen(),
+        );
+      case Routes.fundWallet:
+        return MaterialPageRoute(
+          builder: (_) => const FundWallet(),
         );
       default:
         return MaterialPageRoute(
