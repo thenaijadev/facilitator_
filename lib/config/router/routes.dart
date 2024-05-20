@@ -78,4 +78,8 @@ class Routes {
   static const String myWallet = '/myWallet';
   static const String allTransactons = '/allTransactons';
   static const String transactionDetails = '/transactionDetails';
+
+  //Content
+  static const String myContent = '/myContent';
+  static const String promoteContent = '/promoteContent';
 }

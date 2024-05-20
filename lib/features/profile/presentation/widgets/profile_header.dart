@@ -1,8 +1,8 @@
 import 'package:facilitator/features/auth/presentation/widgets/vendor_status_tag.dart';
+import 'package:flutter/material.dart';
 
 import '../../../../core/utils/size_config.dart';
 import '../../../../core/widgets/text_widget.dart';
-import 'package:flutter/material.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({super.key});

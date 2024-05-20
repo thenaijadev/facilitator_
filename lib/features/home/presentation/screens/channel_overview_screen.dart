@@ -69,17 +69,14 @@ class _ChannelOverviewScreenState extends State<ChannelOverviewScreen> {
                         fontWeight: FontWeight.w500,
                         color: AppColors.primary,
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, Routes.myContentScreen);
-                        },
-                        child: const TextWidget(
-                          text: 'View All',
-                          fontSize: 12,
-                          fontStyle: FontStyle.italic,
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(244, 159, 28, 1),
-                        ),
+                      TextWidget(
+                        text: 'View All',
+                        onTap: () =>
+                            Navigator.pushNamed(context, Routes.myContent),
+                        fontSize: 12,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w600,
+                        color: const Color.fromRGBO(244, 159, 28, 1),
                       ),
                     ],
                   ),
