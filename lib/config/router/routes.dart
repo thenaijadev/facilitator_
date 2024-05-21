@@ -101,4 +101,10 @@ class Routes {
   static const String paymentMethod = '/paymentMethod';
   static const String payWithCard = '/payWithCard';
   static const String paymentFailureOrSuccess = '/paymentFailureOrSuccess';
+
+  //send money to bank
+  static const String sendMoneyToBank = '/sendMoneyToBank';
+  static const String selectBank = '/selectBank';
+  static const String amountAndRemark = '/amountAndRemark';
+  static const String sendSuccessOrFailure = '/sendSuccessOrFailure';
 }

@@ -14,6 +14,10 @@ import 'package:facilitator/features/home/presentation/screens/welcome_screen.da
 import 'package:facilitator/features/payment_method/presentation/screens/pay_with_card_screen.dart';
 import 'package:facilitator/features/payment_method/presentation/screens/payment_method_screen.dart';
 import 'package:facilitator/features/payment_method/presentation/screens/payment_successful_or_failure_screen.dart';
+import 'package:facilitator/features/send_money/presentation/screens/amount_and_remark.dart';
+import 'package:facilitator/features/send_money/presentation/screens/select_bank.dart';
+import 'package:facilitator/features/send_money/presentation/screens/send_money_to_bank.dart';
+import 'package:facilitator/features/send_money/presentation/screens/send_success_or_failure.dart';
 import 'package:facilitator/features/wallet/presentation/screens/bank_details.dart';
 import 'package:facilitator/features/wallet/presentation/screens/card_details.dart';
 import 'package:facilitator/features/wallet/presentation/screens/fund_wallet.dart';
@@ -163,6 +167,22 @@ class AppRouter {
       case Routes.paymentFailureOrSuccess:
         return MaterialPageRoute(
           builder: (_) => const PaymentFailureOrSuccessScreen(),
+        );
+      case Routes.sendMoneyToBank:
+        return MaterialPageRoute(
+          builder: (_) => const SendMoneyToBank(),
+        );
+      case Routes.selectBank:
+        return MaterialPageRoute(
+          builder: (_) => const SelectBank(),
+        );
+      case Routes.amountAndRemark:
+        return MaterialPageRoute(
+          builder: (_) => const AmountAndRemarkScreen(),
+        );
+      case Routes.sendSuccessOrFailure:
+        return MaterialPageRoute(
+          builder: (_) => const SendSuccessOrFailureScreen(),
         );
       default:
         return MaterialPageRoute(

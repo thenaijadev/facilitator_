@@ -56,7 +56,9 @@ class _WalletScreenState extends State<WalletScreen> {
                       WalletAction(
                         image: 'assets/images/send_blue.png',
                         action: 'Send',
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, Routes.sendMoneyToBank);
+                        },
                         color: AppColors.primary,
                       ),
                       const SizedBox(
