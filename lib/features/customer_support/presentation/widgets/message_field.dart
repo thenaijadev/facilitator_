@@ -36,7 +36,7 @@ class MessageField extends StatelessWidget {
                 labelPadding: const EdgeInsets.all(0),
                 enabledBorderRadius: 10,
                 hintColor: Theme.of(context).primaryColor,
-                hintText: "Type your concern",
+                hintText: "Type your concern...",
                 onChanged: (val) {}),
           ),
         ),

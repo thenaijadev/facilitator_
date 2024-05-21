@@ -1,7 +1,7 @@
 import 'package:facilitator/core/constants/app_colors.dart';
 import 'package:facilitator/core/utils/size_config.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
-import 'package:facilitator/features/content/presentation/widget/comment_widget.dart';
+import 'package:facilitator/features/content/presentation/widgets/comment_widget.dart';
 import 'package:flutter/material.dart';
 
 class ContentInfoScreen extends StatefulWidget {

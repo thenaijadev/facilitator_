@@ -39,7 +39,11 @@ class WalletAction extends StatelessWidget {
               CircleAvatar(
                   radius: 25,
                   backgroundColor: const Color.fromRGBO(3, 14, 79, 0.2),
-                  child: Image.asset(image)),
+                  child: Image.asset(
+                    image,
+                    width: 20,
+                    color: Theme.of(context).colorScheme.primary,
+                  )),
               TextWidget(
                 text: action,
                 fontSize: 14,

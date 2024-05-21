@@ -11,6 +11,9 @@ import 'package:facilitator/features/facilitator_channel/presentation/screens/fa
 import 'package:facilitator/features/home/presentation/screens/channel_overview_screen.dart';
 import 'package:facilitator/features/home/presentation/screens/home_screen.dart';
 import 'package:facilitator/features/home/presentation/screens/welcome_screen.dart';
+import 'package:facilitator/features/payment_method/presentation/screens/pay_with_card_screen.dart';
+import 'package:facilitator/features/payment_method/presentation/screens/payment_method_screen.dart';
+import 'package:facilitator/features/payment_method/presentation/screens/payment_successful_or_failure_screen.dart';
 import 'package:facilitator/features/wallet/presentation/screens/bank_details.dart';
 import 'package:facilitator/features/wallet/presentation/screens/card_details.dart';
 import 'package:facilitator/features/wallet/presentation/screens/fund_wallet.dart';
@@ -146,6 +149,20 @@ class AppRouter {
       case Routes.fundingSuccessFailure:
         return MaterialPageRoute(
           builder: (_) => const FundingSuccessOrFailureScreen(),
+        );
+      case Routes.paymentMethod:
+        return MaterialPageRoute(
+          builder: (_) => const PaymentMethodScreen(),
+        );
+
+      case Routes.payWithCard:
+        return MaterialPageRoute(
+          builder: (_) => const PaymentWithCardScreen(),
+        );
+
+      case Routes.paymentFailureOrSuccess:
+        return MaterialPageRoute(
+          builder: (_) => const PaymentFailureOrSuccessScreen(),
         );
       default:
         return MaterialPageRoute(

@@ -114,7 +114,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                   label: 'Next',
                   onPressed: () {
                     Navigator.pushReplacementNamed(
-                        context, Routes.fundingSuccessFailure);
+                        context, Routes.paymentFailureOrSuccess);
                   },
                   isEnabled: true,
                 ),

@@ -43,7 +43,7 @@ class _WalletScreenState extends State<WalletScreen> {
                   Row(
                     children: [
                       WalletAction(
-                        image: 'assets/images/fund.png',
+                        image: 'assets/images/fund_blue.png',
                         action: 'Fund',
                         onTap: () {
                           Navigator.pushNamed(context, Routes.fundWallet);
@@ -54,7 +54,7 @@ class _WalletScreenState extends State<WalletScreen> {
                         width: 10,
                       ),
                       WalletAction(
-                        image: 'assets/images/send.png',
+                        image: 'assets/images/send_blue.png',
                         action: 'Send',
                         onTap: () {},
                         color: AppColors.primary,
@@ -63,7 +63,7 @@ class _WalletScreenState extends State<WalletScreen> {
                         width: 10,
                       ),
                       WalletAction(
-                        image: 'assets/images/withdraw.png',
+                        image: 'assets/images/withdraw_blue.png',
                         action: 'Withdraw',
                         onTap: () {
                           Navigator.pushNamed(
@@ -75,7 +75,7 @@ class _WalletScreenState extends State<WalletScreen> {
                         width: 10,
                       ),
                       WalletAction(
-                        image: 'assets/images/request.png',
+                        image: 'assets/images/request_blue.png',
                         action: 'Request',
                         onTap: () {},
                         color: AppColors.primary,

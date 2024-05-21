@@ -59,7 +59,9 @@ class _MenuWidgetState extends State<MenuWidget> {
               imageWidth: 22,
               label: "My Profile"),
           MenuItemWidget(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, Routes.paymentMethod);
+              },
               iconPath: "assets/images/money.png",
               label: "Payment Method"),
           MenuItemWidget(

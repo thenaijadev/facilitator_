@@ -55,7 +55,7 @@ class _CustomerSupportScreenState extends State<CustomerSupportScreen> {
       appBar: AppBar(
         shape: const Border(bottom: BorderSide(width: 0.5)),
         title: const TextWidget(
-          text: "Vendor Service",
+          text: "Customer Service",
           fontSize: 21,
           fontWeight: FontWeight.w600,
         ),

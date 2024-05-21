@@ -49,7 +49,9 @@ class _FacilitatorProfileScreenState extends State<FacilitatorProfileScreen> {
         )
       },
       {
-        "onTap": () {},
+        "onTap": () {
+          Navigator.pushNamed(context, Routes.paymentMethod);
+        },
         "icon": "assets/images/banknote.png",
         "label": "Payment method",
         "trailing": const Icon(

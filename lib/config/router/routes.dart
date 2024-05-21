@@ -96,4 +96,9 @@ class Routes {
 
   //content analysis
   static const String contentAnalysis = '/contentAnalysis';
+
+  //Payment Method
+  static const String paymentMethod = '/paymentMethod';
+  static const String payWithCard = '/payWithCard';
+  static const String paymentFailureOrSuccess = '/paymentFailureOrSuccess';
 }
