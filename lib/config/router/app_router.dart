@@ -1,5 +1,7 @@
+import 'package:facilitator/features/auth/presentation/screens/facilitator_profile_screen.dart';
 import 'package:facilitator/features/auth/presentation/screens/login_signup_screen.dart';
 import 'package:facilitator/features/auth/presentation/screens/splash_screen.dart';
+import 'package:facilitator/features/content/presentation/screens/content_info.dart';
 import 'package:facilitator/features/content/presentation/screens/my_content_screen.dart';
 import 'package:facilitator/features/content/presentation/screens/promote_content_screen.dart';
 import 'package:facilitator/features/content_analysis/presentation/screens/content_analysis.dart';
@@ -9,13 +11,12 @@ import 'package:facilitator/features/facilitator_channel/presentation/screens/fa
 import 'package:facilitator/features/home/presentation/screens/channel_overview_screen.dart';
 import 'package:facilitator/features/home/presentation/screens/home_screen.dart';
 import 'package:facilitator/features/home/presentation/screens/welcome_screen.dart';
-import 'package:facilitator/features/content/presentation/screens/content_info.dart';
-import 'package:facilitator/features/auth/presentation/screens/facilitator_profile_screen.dart';
 import 'package:facilitator/features/wallet/presentation/screens/bank_details.dart';
 import 'package:facilitator/features/wallet/presentation/screens/card_details.dart';
 import 'package:facilitator/features/wallet/presentation/screens/fund_wallet.dart';
 import 'package:facilitator/features/wallet/presentation/screens/fund_with_bank.dart';
 import 'package:facilitator/features/wallet/presentation/screens/fund_with_card.dart';
+import 'package:facilitator/features/wallet/presentation/screens/funding_success_or_failure_screen.dart';
 import 'package:facilitator/features/wallet/presentation/screens/wallet.dart';
 import 'package:facilitator/features/wallet/presentation/screens/withdraw_from_wallet.dart';
 import 'package:flutter/material.dart';
@@ -120,7 +121,7 @@ class AppRouter {
         );
       case Routes.bankDetails:
         return MaterialPageRoute(
-          builder: (_) => const BankDetails(),
+          builder: (_) => const BankDetailsScreen(),
         );
       case Routes.withdrawFromWallet:
         return MaterialPageRoute(
@@ -141,6 +142,10 @@ class AppRouter {
       case Routes.contentAnalysis:
         return MaterialPageRoute(
           builder: (_) => const ContentAnalysis(),
+        );
+      case Routes.fundingSuccessFailure:
+        return MaterialPageRoute(
+          builder: (_) => const FundingSuccessOrFailureScreen(),
         );
       default:
         return MaterialPageRoute(

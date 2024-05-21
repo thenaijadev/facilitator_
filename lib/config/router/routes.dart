@@ -84,6 +84,7 @@ class Routes {
   static const String fundWithBank = '/fundWithBank';
   static const String bankDetails = '/bankDetails';
   static const String withdrawFromWallet = '/withdrawFromWallet';
+  static const String fundingSuccessFailure = '/fundingSuccessFailure';
 
   //Content
   static const String myContent = '/myContent';

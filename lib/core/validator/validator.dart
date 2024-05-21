@@ -58,4 +58,11 @@ class Validator {
     }
     return null;
   }
+
+  static String? validateNumber(int? number) {
+    if (number! < 100) return "Amount must be between 100.00 and 9,999";
+
+    if (number > 9999) return "Amount must be between 100.00 and 9,999.00";
+    return null;
+  }
 }

@@ -17,39 +17,37 @@ class WalletAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: SizeConfig.getProportionateScreenHeight(
-          context: context,
-          inputHeight: 115,
-        ),
-        width: SizeConfig.getProportionateScreenWidth(
-          context: context,
-          inputWidth: 91,
-        ),
-        margin: const EdgeInsets.only(right: 8.67),
-        padding: const EdgeInsets.symmetric(
-          vertical: 12,
-        ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: const Color.fromRGBO(230, 231, 237, 1),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            CircleAvatar(
-                radius: 25,
-                backgroundColor: const Color.fromRGBO(3, 14, 79, 0.2),
-                child: Image.asset(image)),
-            TextWidget(
-              text: action,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: color,
-            )
-          ],
+    return Expanded(
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          height: SizeConfig.getProportionateScreenHeight(
+            context: context,
+            inputHeight: 115,
+          ),
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(
+            vertical: 12,
+          ),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: const Color.fromRGBO(230, 231, 237, 1),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CircleAvatar(
+                  radius: 25,
+                  backgroundColor: const Color.fromRGBO(3, 14, 79, 0.2),
+                  child: Image.asset(image)),
+              TextWidget(
+                text: action,
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: color,
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -27,20 +27,20 @@ class _WalletScreenState extends State<WalletScreen> {
         ),
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: [
-                const WalletCard(
-                  cardNumber: '...6454',
-                  amount: '0.00',
-                  name: 'Sanni Kayinsola',
-                ),
-                const SizedBox(height: 30),
-                SizedBox(
-                  width: 390,
-                  child: Row(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: [
+                  const WalletCard(
+                    cardNumber: '...6454',
+                    amount: '0.00',
+                    name: 'Sanni Kayinsola',
+                  ),
+                  const SizedBox(height: 30),
+                  Row(
                     children: [
                       WalletAction(
                         image: 'assets/images/fund.png',
@@ -50,11 +50,17 @@ class _WalletScreenState extends State<WalletScreen> {
                         },
                         color: AppColors.primary,
                       ),
+                      const SizedBox(
+                        width: 10,
+                      ),
                       WalletAction(
                         image: 'assets/images/send.png',
                         action: 'Send',
                         onTap: () {},
                         color: AppColors.primary,
+                      ),
+                      const SizedBox(
+                        width: 10,
                       ),
                       WalletAction(
                         image: 'assets/images/withdraw.png',
@@ -65,6 +71,9 @@ class _WalletScreenState extends State<WalletScreen> {
                         },
                         color: AppColors.primary,
                       ),
+                      const SizedBox(
+                        width: 10,
+                      ),
                       WalletAction(
                         image: 'assets/images/request.png',
                         action: 'Request',
@@ -73,28 +82,27 @@ class _WalletScreenState extends State<WalletScreen> {
                       ),
                     ],
                   ),
-                ),
-                const SizedBox(height: 76.67),
-                Column(
-                  children: [
-                    Image.asset('assets/images/empty.png'),
-                    const SizedBox(height: 20),
-                    const TextWidget(
-                      text: 'You have no funds',
-                      fontSize: 21,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.primary,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 68.93),
-                PrimaryButton(
-                  label: 'Proceed to Fund your Wallet',
-                  onPressed: () {},
-                  isEnabled: true,
-                ),
-              ],
-            ),
+                  const SizedBox(height: 76.67),
+                  Column(
+                    children: [
+                      Image.asset('assets/images/empty.png'),
+                      const SizedBox(height: 20),
+                      const TextWidget(
+                        text: 'You have no funds',
+                        fontSize: 21,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.primary,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              PrimaryButton(
+                label: 'Proceed to Fund your Wallet',
+                onPressed: () {},
+                isEnabled: true,
+              ),
+            ],
           ),
         ),
       ),

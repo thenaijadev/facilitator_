@@ -29,7 +29,7 @@ class _FacilitatorProfileScreenState extends State<FacilitatorProfileScreen> {
       {
         "icon": "assets/images/wallet.png",
         "onTap": () {
-          Navigator.pushNamed(context, Routes.editProfile);
+          Navigator.pushNamed(context, Routes.myWallet);
         },
         "label": "Wallet",
         "trailing": const Icon(
@@ -39,7 +39,7 @@ class _FacilitatorProfileScreenState extends State<FacilitatorProfileScreen> {
       },
       {
         "onTap": () {
-          Navigator.pushNamed(context, Routes.myWallet);
+          // Navigator.pushNamed(context, Routes.myWallet);
         },
         "icon": "assets/images/list_icon.png",
         "label": "My Content",
@@ -49,9 +49,7 @@ class _FacilitatorProfileScreenState extends State<FacilitatorProfileScreen> {
         )
       },
       {
-        "onTap": () {
-          Navigator.pushNamed(context, Routes.myStores);
-        },
+        "onTap": () {},
         "icon": "assets/images/banknote.png",
         "label": "Payment method",
         "trailing": const Icon(
@@ -60,9 +58,7 @@ class _FacilitatorProfileScreenState extends State<FacilitatorProfileScreen> {
         )
       },
       {
-        "onTap": () {
-          Navigator.pushNamed(context, Routes.myServices);
-        },
+        "onTap": () {},
         "icon": "assets/images/book.png",
         "label": "Booked Sessions",
         "trailing": const Icon(
@@ -71,9 +67,7 @@ class _FacilitatorProfileScreenState extends State<FacilitatorProfileScreen> {
         )
       },
       {
-        "onTap": () {
-          Navigator.pushNamed(context, Routes.storePerformance);
-        },
+        "onTap": () {},
         "icon": "assets/images/settings.png",
         "label": "Settings",
         "trailing": const Icon(
