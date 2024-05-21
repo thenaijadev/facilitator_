@@ -79,7 +79,9 @@ class _WalletScreenState extends State<WalletScreen> {
                       WalletAction(
                         image: 'assets/images/request_blue.png',
                         action: 'Request',
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, Routes.requestMoney);
+                        },
                         color: AppColors.primary,
                       ),
                     ],

@@ -1,19 +1,20 @@
 import 'package:facilitator/app/widgets/primary_button.dart';
-import 'package:facilitator/config/router/routes.dart';
+import 'package:facilitator/app/widgets/white_popup.dart';
 import 'package:facilitator/core/utils/size_config.dart';
 import 'package:facilitator/core/validator/validator.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
 import 'package:facilitator/features/auth/presentation/widgets/input_field_widget.dart';
+import 'package:facilitator/features/request_money/presentation/widgets/request_prompt.dart';
 import 'package:flutter/material.dart';
 
-class AmountAndRemarkScreen extends StatefulWidget {
-  const AmountAndRemarkScreen({super.key});
+class AmountRequestScreen extends StatefulWidget {
+  const AmountRequestScreen({super.key});
 
   @override
-  State<AmountAndRemarkScreen> createState() => _AmountAndRemarkScreenState();
+  State<AmountRequestScreen> createState() => _AmountRequestScreenState();
 }
 
-class _AmountAndRemarkScreenState extends State<AmountAndRemarkScreen> {
+class _AmountRequestScreenState extends State<AmountRequestScreen> {
   late GlobalKey<FormFieldState> amountKey;
   late GlobalKey<FormFieldState> remarkKey;
   bool amountIsValid = false;
@@ -33,7 +34,7 @@ class _AmountAndRemarkScreenState extends State<AmountAndRemarkScreen> {
       appBar: AppBar(
         shape: const Border(bottom: BorderSide(width: 0.5)),
         title: const TextWidget(
-          text: "Send Money",
+          text: "Request Money",
           fontSize: 21,
           fontWeight: FontWeight.w600,
         ),
@@ -60,16 +61,20 @@ class _AmountAndRemarkScreenState extends State<AmountAndRemarkScreen> {
                     color: const Color.fromRGBO(3, 14, 79, 0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Image.asset('assets/images/access_bank.png'),
+                  child: Image.asset(
+                    'assets/images/User.png',
+                    width: 50,
+                    height: 50,
+                  ),
                 ),
                 const TextWidget(
-                  text: 'Sarah Reves',
+                  text: 'Abigail',
                   fontSize: 21,
                   fontWeight: FontWeight.w500,
                 ),
                 const SizedBox(height: 10),
                 const TextWidget(
-                  text: 'Access Bank ( 65457549) ',
+                  text: '+234 90379745545',
                   fontSize: 18,
                   fontWeight: FontWeight.w400,
                 ),
@@ -111,14 +116,31 @@ class _AmountAndRemarkScreenState extends State<AmountAndRemarkScreen> {
                       },
                       textFieldkey: remarkKey,
                     ),
+                    const SizedBox(height: 20),
+                    CheckboxListTile(
+                      contentPadding: const EdgeInsets.all(0),
+                      value: true,
+                      onChanged: (val) {},
+                      title: const TextWidget(
+                        text: 'Save Recipient',
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    )
                   ],
                 ),
               ],
             ),
             PrimaryButton(
-              label: 'Send',
+              label: 'Request',
               onPressed: () {
-                Navigator.pushNamed(context, Routes.sendSuccessOrFailure);
+                showWhitePopup(
+                  context: context,
+                  widget: const RequestPrompt(
+                    amount: '2000',
+                    recipient: '+234 90379745545',
+                  ),
+                );
               },
               isEnabled: true,
             ),

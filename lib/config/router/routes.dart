@@ -113,4 +113,9 @@ class Routes {
   static const String amountToWithdraw = '/amountToWithdraw';
   static const String withdrawalSuccessOrFailure =
       '/withdrawalSuccessOrFailure';
+
+  // request money
+  static const String requestMoney = '/requestMoney';
+  static const String selectRecipient = '/selectRecipient';
+  static const String amountRequest = '/amountRequest';
 }
