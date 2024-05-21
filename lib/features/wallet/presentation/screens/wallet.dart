@@ -1,10 +1,9 @@
 import 'package:facilitator/app/widgets/primary_button.dart';
+import 'package:facilitator/config/router/routes.dart';
 import 'package:facilitator/core/constants/app_colors.dart';
-import 'package:facilitator/core/utils/size_config.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
 import 'package:facilitator/features/wallet/presentation/widgets/action_widget.dart';
 import 'package:facilitator/features/wallet/presentation/widgets/wallet_card.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class WalletScreen extends StatefulWidget {
@@ -41,13 +40,14 @@ class _WalletScreenState extends State<WalletScreen> {
                 const SizedBox(height: 30),
                 SizedBox(
                   width: 390,
-                  child: GridView.count(
-                    crossAxisCount: 2,
+                  child: Row(
                     children: [
                       WalletAction(
                         image: 'assets/images/fund.png',
                         action: 'Fund',
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, Routes.fundWallet);
+                        },
                         color: AppColors.primary,
                       ),
                       WalletAction(
@@ -59,7 +59,10 @@ class _WalletScreenState extends State<WalletScreen> {
                       WalletAction(
                         image: 'assets/images/withdraw.png',
                         action: 'Withdraw',
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, Routes.withdrawFromWallet);
+                        },
                         color: AppColors.primary,
                       ),
                       WalletAction(
@@ -89,7 +92,7 @@ class _WalletScreenState extends State<WalletScreen> {
                   label: 'Proceed to Fund your Wallet',
                   onPressed: () {},
                   isEnabled: true,
-                )
+                ),
               ],
             ),
           ),

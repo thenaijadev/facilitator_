@@ -18,12 +18,14 @@ class Routes {
 
   static const String resetPassword = '/resetPasswords';
 
-//Home
+  //Home
   static const String home = '/home';
   static const String homeScreenTwo = '/homeScreenTwo';
   //facilitator profile
   static const String facilitatorProfileScreen = '/facilitatorProfileScreen';
   static const String myContentScreen = '/MyContentScreen';
+  static const String facilitatorChannel = '/facilitatorChannel';
+  static const String createFacilitatorChannel = '/createFacilitatorChannel';
 
   //Store
   static const String firstStoreCreation = '/firstStoreCreation';
@@ -77,10 +79,20 @@ class Routes {
   //Wallet
   static const String myWallet = '/myWallet';
   static const String fundWallet = '/fundWallet';
-  static const String transactionDetails = '/transactionDetails';
+  static const String fundWithCard = '/fundWithCard';
+  static const String cardDetails = '/cardDetails';
+  static const String fundWithBank = '/fundWithBank';
+  static const String bankDetails = '/bankDetails';
+  static const String withdrawFromWallet = '/withdrawFromWallet';
 
   //Content
   static const String myContent = '/myContent';
   static const String promoteContent = '/promoteContent';
   static const String contentInfo = '/contentInfo';
+
+  //customer support
+  static const String customerSupport = '/customerSupport';
+
+  //content analysis
+  static const String contentAnalysis = '/contentAnalysis';
 }

@@ -1,3 +1,4 @@
+import 'package:facilitator/config/router/routes.dart';
 import 'package:facilitator/core/constants/app_colors.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
 import 'package:facilitator/features/wallet/presentation/widgets/fund_wallet_option.dart';
@@ -10,7 +11,6 @@ class FundWallet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const TextWidget(
           text: 'Fund Wallet',
           fontSize: 21,
@@ -27,20 +27,24 @@ class FundWallet extends StatelessWidget {
                 FundWalltetOption(
                   optionText: 'Fund with card',
                   option: 'Fund directly with your bank card',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, Routes.fundWithCard);
+                  },
                 ),
                 const SizedBox(height: 20),
                 FundWalltetOption(
-                  optionText: 'Fund with card',
-                  option: 'Fund directly with your bank card',
+                  optionText: 'Fund with bank account',
+                  option: 'Fund directly with your bank account',
                   color: const Color.fromRGBO(3, 14, 79, 0.1),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, Routes.fundWithBank);
+                  },
                 ),
                 const SizedBox(height: 20),
                 FundWalltetOption(
                   textColor: const Color.fromRGBO(3, 14, 79, 0.1),
-                  optionText: 'Fund with bank account',
-                  option: 'Fund directly with your bank account',
+                  optionText: 'Fund with USSD ',
+                  option: 'Fund directly with your USSD',
                   color: const Color.fromRGBO(3, 14, 79, 0.1),
                   onTap: () {},
                 ),

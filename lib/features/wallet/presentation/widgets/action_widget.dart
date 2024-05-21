@@ -1,4 +1,3 @@
-import 'package:facilitator/config/router/routes.dart';
 import 'package:facilitator/core/utils/size_config.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
@@ -19,9 +18,7 @@ class WalletAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, Routes.fundWallet);
-      },
+      onTap: onTap,
       child: Container(
         height: SizeConfig.getProportionateScreenHeight(
           context: context,
