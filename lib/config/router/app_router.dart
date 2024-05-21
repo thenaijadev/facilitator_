@@ -25,7 +25,10 @@ import 'package:facilitator/features/wallet/presentation/screens/fund_with_bank.
 import 'package:facilitator/features/wallet/presentation/screens/fund_with_card.dart';
 import 'package:facilitator/features/wallet/presentation/screens/funding_success_or_failure_screen.dart';
 import 'package:facilitator/features/wallet/presentation/screens/wallet.dart';
-import 'package:facilitator/features/wallet/presentation/screens/withdraw_from_wallet.dart';
+import 'package:facilitator/features/withdraw_from_wallet/presentation/screens/amount_to_withdraw.dart';
+import 'package:facilitator/features/withdraw_from_wallet/presentation/screens/select_bank_to_withdraw_from.dart';
+import 'package:facilitator/features/withdraw_from_wallet/presentation/screens/withdraw_from_wallet.dart';
+import 'package:facilitator/features/withdraw_from_wallet/presentation/screens/withdrawal_success_or_failure.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/widgets/error_screen.dart';
@@ -183,6 +186,18 @@ class AppRouter {
       case Routes.sendSuccessOrFailure:
         return MaterialPageRoute(
           builder: (_) => const SendSuccessOrFailureScreen(),
+        );
+      case Routes.selectBankToWithdraw:
+        return MaterialPageRoute(
+          builder: (_) => const SelectBankToWithdraw(),
+        );
+      case Routes.amountToWithdraw:
+        return MaterialPageRoute(
+          builder: (_) => const AmountToWithdrawScreen(),
+        );
+      case Routes.withdrawalSuccessOrFailure:
+        return MaterialPageRoute(
+          builder: (_) => const WithdrawalSuccessOrFailureScreen(),
         );
       default:
         return MaterialPageRoute(

@@ -83,7 +83,6 @@ class Routes {
   static const String cardDetails = '/cardDetails';
   static const String fundWithBank = '/fundWithBank';
   static const String bankDetails = '/bankDetails';
-  static const String withdrawFromWallet = '/withdrawFromWallet';
   static const String fundingSuccessFailure = '/fundingSuccessFailure';
 
   //Content
@@ -107,4 +106,11 @@ class Routes {
   static const String selectBank = '/selectBank';
   static const String amountAndRemark = '/amountAndRemark';
   static const String sendSuccessOrFailure = '/sendSuccessOrFailure';
+
+  //withdraw from bank
+  static const String withdrawFromWallet = '/withdrawFromWallet';
+  static const String selectBankToWithdraw = '/selectBankToWithdraw';
+  static const String amountToWithdraw = '/amountToWithdraw';
+  static const String withdrawalSuccessOrFailure =
+      '/withdrawalSuccessOrFailure';
 }
