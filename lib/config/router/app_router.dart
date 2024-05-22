@@ -6,8 +6,10 @@ import 'package:facilitator/features/content/presentation/screens/my_content_scr
 import 'package:facilitator/features/content/presentation/screens/promote_content_screen.dart';
 import 'package:facilitator/features/content_analysis/presentation/screens/content_analysis.dart';
 import 'package:facilitator/features/customer_support/presentation/screens/customer_support.dart';
+import 'package:facilitator/features/facilitator_channel/presentation/screens/create_channel_manually.dart';
 import 'package:facilitator/features/facilitator_channel/presentation/screens/create_facilitator_channel.dart';
 import 'package:facilitator/features/facilitator_channel/presentation/screens/facilitator_channel.dart';
+import 'package:facilitator/features/facilitator_channel/presentation/screens/select_channel_category.dart';
 import 'package:facilitator/features/home/presentation/screens/channel_overview_screen.dart';
 import 'package:facilitator/features/home/presentation/screens/home_screen.dart';
 import 'package:facilitator/features/home/presentation/screens/welcome_screen.dart';
@@ -213,6 +215,14 @@ class AppRouter {
       case Routes.amountRequest:
         return MaterialPageRoute(
           builder: (_) => const AmountRequestScreen(),
+        );
+      case Routes.createChannelManually:
+        return MaterialPageRoute(
+          builder: (_) => const ChannelCreationScreen(),
+        );
+      case Routes.selectChannelCategory:
+        return MaterialPageRoute(
+          builder: (_) => const SelectChannelCategoryScreen(),
         );
       default:
         return MaterialPageRoute(

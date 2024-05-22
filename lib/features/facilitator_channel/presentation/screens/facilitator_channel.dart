@@ -1,4 +1,5 @@
 import 'package:facilitator/app/widgets/primary_button.dart';
+import 'package:facilitator/config/router/routes.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
 import 'package:facilitator/features/facilitator_channel/presentation/widgets/cover_image_stack.dart';
 import 'package:facilitator/features/home/presentation/widgets/menu_widget.dart';
@@ -37,7 +38,7 @@ class _FacilitatorChannelState extends State<FacilitatorChannel> {
                   Column(
                     children: [
                       const SizedBox(height: 80),
-                      Image.asset('empty.png'),
+                      Image.asset('assets/images/empty.png'),
                       const SizedBox(height: 20),
                       const TextWidget(
                         text: 'You have no channel',
@@ -57,7 +58,10 @@ class _FacilitatorChannelState extends State<FacilitatorChannel> {
                   ),
                   PrimaryButton(
                     label: 'Create a  Channel',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, Routes.createFacilitatorChannel);
+                    },
                     isEnabled: true,
                   ),
                 ],

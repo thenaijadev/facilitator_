@@ -21,11 +21,14 @@ class Routes {
   //Home
   static const String home = '/home';
   static const String homeScreenTwo = '/homeScreenTwo';
+
   //facilitator profile
   static const String facilitatorProfileScreen = '/facilitatorProfileScreen';
   static const String myContentScreen = '/MyContentScreen';
   static const String facilitatorChannel = '/facilitatorChannel';
   static const String createFacilitatorChannel = '/createFacilitatorChannel';
+  static const String createChannelManually = '/createChannelManually';
+  static const String selectChannelCategory = '/selectChannelCategory';
 
   //Store
   static const String firstStoreCreation = '/firstStoreCreation';

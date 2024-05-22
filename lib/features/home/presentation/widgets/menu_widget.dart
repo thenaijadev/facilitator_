@@ -46,7 +46,7 @@ class _MenuWidgetState extends State<MenuWidget> {
               label: "My Content"),
           MenuItemWidget(
               onTap: () {
-                Navigator.pushNamed(context, Routes.createFacilitatorChannel);
+                Navigator.pushNamed(context, Routes.facilitatorChannel);
               },
               iconPath: "assets/images/channel.png",
               imageWidth: 28,
