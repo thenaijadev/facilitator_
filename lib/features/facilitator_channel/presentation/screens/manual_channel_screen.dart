@@ -2,11 +2,13 @@ import 'package:facilitator/core/constants/app_colors.dart';
 import 'package:facilitator/core/utils/size_config.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
 import 'package:facilitator/features/facilitator_channel/presentation/widgets/channel_details_widget.dart';
+import 'package:facilitator/features/facilitator_channel/presentation/widgets/home_content_widget.dart';
+import 'package:facilitator/features/facilitator_channel/presentation/widgets/my_tab_view_widget.dart';
 import 'package:facilitator/features/facilitator_channel/presentation/widgets/resizeable_button.dart';
-import 'package:facilitator/features/facilitator_channel/presentation/widgets/tab_item_widget.dart';
+import 'package:facilitator/features/facilitator_channel/presentation/widgets/video_content_item_widget.dart';
+import 'package:facilitator/features/facilitator_channel/presentation/widgets/video_content_list.dart';
 import 'package:facilitator/features/home/presentation/widgets/menu_widget.dart';
 import 'package:facilitator/features/home/presentation/widgets/navbar_widget.dart';
-import 'package:facilitator/router_exports.dart';
 import 'package:flutter/material.dart';
 
 class MyChannelManual extends StatefulWidget {
@@ -187,13 +189,13 @@ class _MyChannelManualState extends State<MyChannelManual> {
                         icon: 'assets/images/chat_dots.png',
                         label: 'johndoe@gmail.com'),
                     const ChannelDetails(
-                        icon: 'assets/images/chat_dots.png',
-                        label: 'johndoe@gmail.com'),
+                        icon: 'assets/images/phone_blue.png',
+                        label: '09014138731'),
                     const ChannelDetails(
-                        icon: 'assets/images/chat_dots.png',
-                        label: 'johndoe@gmail.com'),
+                        icon: 'assets/images/map_point.png',
+                        label: 'Ikoyi Lagos State'),
                   ]),
-                  const SizedBox(height: 45),
+                  const SizedBox(height: 20),
                 ],
               ),
               ResizeableButton(
@@ -207,91 +209,50 @@ class _MyChannelManualState extends State<MyChannelManual> {
                 onPressed: () {},
               ),
               const SizedBox(height: 20),
-              const MyTabViewWidget(
+              MyTabViewWidget(
                 body: [
                   // Products(),
                   // CategoriesWidget(),
-                  SizedBox(),
-                  SizedBox(),
-                  SizedBox(),
-                  SizedBox(),
+                  const HomeContentWidget(),
+                  VideoContentList(
+                    theresLabel: false,
+                    categoryLabel: "Most Watched",
+                    items: List.generate(
+                      4,
+                      (index) => VideoContentItemWidget(
+                        numberOfLikes: "200",
+                        numberOfComments: "200",
+                        numberOfViews: "300k Views",
+                        onComment: () {},
+                        onLike: () {},
+                        lastViewed: "3 months ago",
+                        label: "How to run a coffee Business",
+                        image: Image.asset(
+                          "assets/images/coffee.png",
+                          width: 140,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(),
+                  const SizedBox(),
+                  const SizedBox(),
 
                   // Description(),
                   // Reviews()
                 ],
-                tabLabels: ["Products", "Categories", "Description", "Reviews"],
+                tabLabels: const [
+                  "Home",
+                  "Content Video",
+                  "Live Session",
+                  "Reviews"
+                ],
               ),
               const SizedBox(height: 25),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class MyTabViewWidget extends StatefulWidget {
-  const MyTabViewWidget(
-      {super.key, required this.tabLabels, required this.body});
-  final List<String> tabLabels;
-  final List<Widget> body;
-  @override
-  State<MyTabViewWidget> createState() => _MyTabViewWidgetState();
-}
-
-class _MyTabViewWidgetState extends State<MyTabViewWidget> {
-  int chosenTabItem = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 40,
-          child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: List.generate(
-                  widget.tabLabels.length,
-                  (index) => TabItemWidget(
-                      label: widget.tabLabels[index],
-                      onTap: () {
-                        setState(() {
-                          chosenTabItem = index;
-                        });
-                      },
-                      isChosen: chosenTabItem == index))),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        widget.body[chosenTabItem]
-      ],
-    );
-  }
-}
-
-class TabHome extends StatelessWidget {
-  const TabHome({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset('assets/images/empty.png'),
-        const TextWidget(
-          text: 'You have videos ',
-          fontSize: 21,
-          fontWeight: FontWeight.w500,
-        ),
-        const TextWidget(
-          textAlign: TextAlign.center,
-          text: 'Tap on plus button to create a new video',
-          fontSize: 18,
-          fontWeight: FontWeight.w400,
-        ),
-      ],
     );
   }
 }

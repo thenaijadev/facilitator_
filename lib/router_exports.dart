@@ -46,4 +46,3 @@ export 'package:facilitator/features/withdraw_from_wallet/presentation/screens/a
 export 'package:facilitator/features/withdraw_from_wallet/presentation/screens/select_bank_to_withdraw_from.dart';
 export 'package:facilitator/features/withdraw_from_wallet/presentation/screens/withdraw_from_wallet.dart';
 export 'package:facilitator/features/withdraw_from_wallet/presentation/screens/withdrawal_success_or_failure.dart';
-export 'package:flutter/material.dart';
