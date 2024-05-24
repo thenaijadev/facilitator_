@@ -5,9 +5,7 @@ import 'package:facilitator/features/facilitator_channel/presentation/widgets/re
 import 'package:facilitator/features/home/presentation/widgets/menu_widget.dart';
 import 'package:facilitator/features/home/presentation/widgets/navbar_widget.dart';
 import 'package:facilitator/router_exports.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class MyChannelManual extends StatefulWidget {
   const MyChannelManual({super.key});
@@ -91,18 +89,17 @@ class _MyChannelManualState extends State<MyChannelManual> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
-          child: ListView(children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                NavbarWidget(
-                  scaffoldKey: scaffoldKey,
-                ),
-                const SizedBox(height: 20),
-                _buildImageStack(),
-                const SizedBox(height: 70),
-                Column(
-                  children: [
+          child: ListView(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  NavbarWidget(
+                    scaffoldKey: scaffoldKey,
+                  ),
+                  _buildImageStack(),
+                  const SizedBox(height: 70),
+                  Column(children: [
                     const TextWidget(
                       text: 'Business World',
                       fontSize: 21,
@@ -184,98 +181,89 @@ class _MyChannelManualState extends State<MyChannelManual> {
                       ],
                     ),
                     const SizedBox(height: 4),
-                    Row(
-                      children: [
-                        Image.asset('assets/images/chat_dots.png'),
-                        const SizedBox(width: 10),
-                        const TextWidget(
-                          text: 'johndoe@gmail.com',
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        )
-                      ],
-                    ),
-                    const SizedBox(height: 4),
-                    Row(
-                      children: [
-                        Image.asset('assets/images/phone.png'),
-                        const SizedBox(width: 10),
-                        const TextWidget(
-                          text: '+234 09056365557',
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        )
-                      ],
-                    ),
-                    const SizedBox(height: 4),
-                    Row(
-                      children: [
-                        Image.asset('assets/images/location.png'),
-                        const SizedBox(width: 10),
-                        const TextWidget(
-                          text: 'Ikoyi, Lagos state',
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        )
-                      ],
-                    ),
-                    const SizedBox(height: 45),
-                  ],
+                    const ChannelDetails(
+                        icon: 'assets/images/chat_dots.png',
+                        label: 'johndoe@gmail.com'),
+                    const ChannelDetails(
+                        icon: 'assets/images/chat_dots.png',
+                        label: 'johndoe@gmail.com'),
+                    const ChannelDetails(
+                        icon: 'assets/images/chat_dots.png',
+                        label: 'johndoe@gmail.com'),
+                  ]),
+                  const SizedBox(height: 45),
+                ],
+              ),
+              ResizeableButton(
+                width: 30,
+                content: const TextWidget(
+                  text: '0 Views ',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
                 ),
-                ResizeableButton(
-                  width: 30,
-                  content: const TextWidget(
-                    text: '0 Views ',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {},
-                ),
-                const SizedBox(height: 20),
-                const DefaultTabController(
-                  length: 4,
-                  child: TabBar(
-                    padding: EdgeInsets.all(0),
-                    isScrollable: true,
-                    tabs: [
-                      Tab(
-                        child: TextWidget(
-                          text: 'Home ',
-                          fontSize: 21,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Tab(
-                        child: TextWidget(
-                          text: 'Content Video',
-                          fontSize: 21,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Tab(
-                        child: TextWidget(
-                          text: 'Live Sessions',
-                          fontSize: 21,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Tab(
-                        child: TextWidget(
-                          text: 'Reviews',
-                          fontSize: 21,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 25),
-              ],
-            ),
-          ]),
+                onPressed: () {},
+              ),
+              const SizedBox(height: 20),
+              const MyTabViewWidget(
+                body: [
+                  // Products(),
+                  // CategoriesWidget(),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+
+                  // Description(),
+                  // Reviews()
+                ],
+                tabLabels: ["Products", "Categories", "Description", "Reviews"],
+              ),
+              const SizedBox(height: 25),
+            ],
+          ),
         ),
       ),
+    );
+  }
+}
+
+class MyTabViewWidget extends StatefulWidget {
+  const MyTabViewWidget(
+      {super.key, required this.tabLabels, required this.body});
+  final List<String> tabLabels;
+  final List<Widget> body;
+  @override
+  State<MyTabViewWidget> createState() => _MyTabViewWidgetState();
+}
+
+class _MyTabViewWidgetState extends State<MyTabViewWidget> {
+  int chosenTabItem = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 40,
+          child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: List.generate(
+                  widget.tabLabels.length,
+                  (index) => TabItemWidget(
+                      label: widget.tabLabels[index],
+                      onTap: () {
+                        setState(() {
+                          chosenTabItem = index;
+                        });
+                      },
+                      isChosen: chosenTabItem == index))),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        widget.body[chosenTabItem]
+      ],
     );
   }
 }
@@ -354,4 +342,60 @@ Stack _buildImageStack() {
       ),
     ],
   );
+}
+
+class ChannelDetails extends StatelessWidget {
+  const ChannelDetails({
+    super.key,
+    required this.icon,
+    required this.label,
+  });
+  final String icon;
+  final String label;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Image.asset(
+          icon,
+          width: 24,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        const SizedBox(
+          width: 25,
+        ),
+        TextWidget(
+          text: label,
+          fontSize: 16,
+        ),
+      ],
+    );
+  }
+}
+
+class TabItemWidget extends StatelessWidget {
+  const TabItemWidget(
+      {super.key,
+      required this.onTap,
+      required this.isChosen,
+      required this.label});
+  final VoidCallback onTap;
+  final bool isChosen;
+  final String label;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: TextWidget(
+        text: label,
+        onTap: onTap,
+        fontWeight: FontWeight.w500,
+        fontSize: 21,
+        color: isChosen
+            ? Theme.of(context).colorScheme.primary
+            : const Color.fromARGB(70, 3, 14, 79),
+      ),
+    );
+  }
 }
