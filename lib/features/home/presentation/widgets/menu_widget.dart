@@ -69,6 +69,12 @@ class _MenuWidgetState extends State<MenuWidget> {
               iconPath: "assets/images/bookmark.png",
               label: "Book Session"),
           MenuItemWidget(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.customerSupport);
+              },
+              iconPath: "assets/images/bookmark.png",
+              label: "Customer Support"),
+          MenuItemWidget(
               onTap: () {},
               iconPath: "assets/images/tag.png",
               imageColor: Colors.white,

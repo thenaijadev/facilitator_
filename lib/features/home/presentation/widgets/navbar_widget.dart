@@ -28,7 +28,6 @@ class _NavbarWidgetState extends State<NavbarWidget> {
       children: [
         const SizedBox(height: 5),
         Image.asset('assets/images/logo.png'),
-        const SizedBox(height: 9.39),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

@@ -15,8 +15,13 @@ class Routes {
   static const String signUp = '/signUp';
   static const String verificationSuccessful = '/verificationSuccessful';
   static const String forgotPassword = '/forgotPassword';
+  static const String passwordChangeSuccessful = '/passwordChangeSuccessful';
 
   static const String resetPassword = '/resetPasswords';
+
+//User Verificatiom
+  static const String userVerification = "/userVerification";
+  static const String inProgress = "/inProgress";
 
   //Home
   static const String home = '/home';

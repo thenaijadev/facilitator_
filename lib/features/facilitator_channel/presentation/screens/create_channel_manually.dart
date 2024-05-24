@@ -67,7 +67,7 @@ class _ChannelCreationScreenState extends State<ChannelCreationScreen> {
                         enabledBorderRadius: 5,
                         hintColor: const Color.fromARGB(120, 58, 58, 58),
                         hintSize: 18,
-                        hintText: "Facilitator Name",
+                        hintText: "facilitator Name",
                         onChanged: (val) {
                           setState(() {
                             facilitatorNameIsValid =
@@ -95,7 +95,7 @@ class _ChannelCreationScreenState extends State<ChannelCreationScreen> {
                         textFieldkey: channelHandleKey,
                       ),
                       InputFieldWidget(
-                        maxLines: 5,
+                        maxLines: 4,
                         validator: (p0) {
                           final channelDescriptionState =
                               Validator.validateEmail(
@@ -106,6 +106,7 @@ class _ChannelCreationScreenState extends State<ChannelCreationScreen> {
                         hintColor: const Color.fromARGB(120, 58, 58, 58),
                         hintSize: 18,
                         hintText: "Channel Description",
+                        verticalContentPadding: 10,
                         onChanged: (val) {
                           setState(() {
                             channelDescriptionIsValid =
@@ -128,7 +129,7 @@ class _ChannelCreationScreenState extends State<ChannelCreationScreen> {
                         enabledBorderRadius: 5,
                         hintColor: const Color.fromARGB(120, 58, 58, 58),
                         hintSize: 18,
-                        hintText: "Facilitator Category",
+                        hintText: "facilitator Category",
                         onChanged: (val) {
                           setState(() {
                             facilitatorCategoryIsValid =

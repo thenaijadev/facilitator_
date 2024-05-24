@@ -6,17 +6,18 @@ class CategoryList extends StatelessWidget {
     super.key,
     required this.title,
     required this.value,
+    required this.onChanged,
   });
   final String title;
   final bool value;
-
+  final dynamic Function(bool?) onChanged;
   @override
   Widget build(BuildContext context) {
     return CheckboxListTile(
       controlAffinity: ListTileControlAffinity.leading,
       contentPadding: const EdgeInsets.all(0),
       value: value,
-      onChanged: (val) {},
+      onChanged: onChanged,
       title: Transform.translate(
         offset: const Offset(-18, 0),
         child: TextWidget(

@@ -154,7 +154,7 @@ class _CardDetailsState extends State<CardDetails> {
   }
 }
 
-void fundingLoading(context) {
+void cardDetailsLoading(context) {
   showWhitePopup(
       context: context,
       widget: Container(

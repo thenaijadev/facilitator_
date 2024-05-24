@@ -85,16 +85,16 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 });
               },
               textFieldkey: passwordKey,
-              // suffixIcon: IconButton(
-              //   onPressed: () {
-              //     setState(() {
-              //       obscureText = !obscureText;
-              //     });
-              //   },
-              //   icon: Icon(obscureText
-              //       ? Icons.visibility_outlined
-              //       : Icons.visibility_off_outlined),
-              // ),
+              suffixIcon: IconButton(
+                onPressed: () {
+                  setState(() {
+                    obscureText = !obscureText;
+                  });
+                },
+                icon: Icon(obscureText
+                    ? Icons.visibility_outlined
+                    : Icons.visibility_off_outlined),
+              ),
             ),
             InputFieldWidget(
               enabledBorderRadius: 5,
@@ -115,16 +115,16 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 });
               },
               textFieldkey: confirmPasswordKey,
-              // suffixIcon: IconButton(
-              //   onPressed: () {
-              //     setState(() {
-              //       obscureText = !obscureText;
-              //     });
-              //   },
-              //   icon: Icon(obscureText
-              //       ? Icons.visibility_outlined
-              //       : Icons.visibility_off_outlined),
-              // ),
+              suffixIcon: IconButton(
+                onPressed: () {
+                  setState(() {
+                    obscureText = !obscureText;
+                  });
+                },
+                icon: Icon(obscureText
+                    ? Icons.visibility_outlined
+                    : Icons.visibility_off_outlined),
+              ),
             ),
             const SizedBox(
               height: 32,
@@ -132,7 +132,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
             PrimaryButton(
                 label: "Submit",
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, Routes.login);
+                  // Navigator.pushReplacementNamed(context, Routes.login);
+                  Navigator.pushNamed(context, Routes.userVerification);
                 },
                 isEnabled: passwordIsValid && confirmPasswordIsValids)
           ],

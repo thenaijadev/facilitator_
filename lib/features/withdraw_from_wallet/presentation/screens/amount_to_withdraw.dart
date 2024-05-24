@@ -69,7 +69,7 @@ class _AmountToWithdrawScreenState extends State<AmountToWithdrawScreen> {
                 ),
                 const SizedBox(height: 10),
                 const TextWidget(
-                  text: 'Acxess Bank ( 65457549) ',
+                  text: 'Access Bank ( 65457549) ',
                   fontSize: 18,
                   fontWeight: FontWeight.w400,
                 ),

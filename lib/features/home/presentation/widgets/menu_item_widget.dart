@@ -21,7 +21,7 @@ class MenuItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10),
       child: GestureDetector(
         onTap: onTap,
         child: Row(

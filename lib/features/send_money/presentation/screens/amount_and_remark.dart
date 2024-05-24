@@ -30,6 +30,7 @@ class _AmountAndRemarkScreenState extends State<AmountAndRemarkScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         shape: const Border(bottom: BorderSide(width: 0.5)),
         title: const TextWidget(

@@ -1,49 +1,5 @@
-import 'package:facilitator/features/auth/presentation/screens/facilitator_profile_screen.dart';
-import 'package:facilitator/features/auth/presentation/screens/login_signup_screen.dart';
-import 'package:facilitator/features/auth/presentation/screens/splash_screen.dart';
-import 'package:facilitator/features/content/presentation/screens/content_info.dart';
-import 'package:facilitator/features/content/presentation/screens/my_content_screen.dart';
-import 'package:facilitator/features/content/presentation/screens/promote_content_screen.dart';
-import 'package:facilitator/features/content_analysis/presentation/screens/content_analysis.dart';
-import 'package:facilitator/features/customer_support/presentation/screens/customer_support.dart';
-import 'package:facilitator/features/facilitator_channel/presentation/screens/create_channel_manually.dart';
-import 'package:facilitator/features/facilitator_channel/presentation/screens/create_facilitator_channel.dart';
-import 'package:facilitator/features/facilitator_channel/presentation/screens/facilitator_channel.dart';
-import 'package:facilitator/features/facilitator_channel/presentation/screens/select_channel_category.dart';
-import 'package:facilitator/features/home/presentation/screens/channel_overview_screen.dart';
-import 'package:facilitator/features/home/presentation/screens/home_screen.dart';
-import 'package:facilitator/features/home/presentation/screens/welcome_screen.dart';
-import 'package:facilitator/features/payment_method/presentation/screens/pay_with_card_screen.dart';
-import 'package:facilitator/features/payment_method/presentation/screens/payment_method_screen.dart';
-import 'package:facilitator/features/payment_method/presentation/screens/payment_successful_or_failure_screen.dart';
-import 'package:facilitator/features/request_money/presentation/screens/request_amount.dart';
-import 'package:facilitator/features/request_money/presentation/screens/select_recipient.dart';
-import 'package:facilitator/features/request_money/presentation/screens/wallet_request.dart';
-import 'package:facilitator/features/send_money/presentation/screens/amount_and_remark.dart';
-import 'package:facilitator/features/send_money/presentation/screens/select_bank.dart';
-import 'package:facilitator/features/send_money/presentation/screens/send_money_to_bank.dart';
-import 'package:facilitator/features/send_money/presentation/screens/send_success_or_failure.dart';
-import 'package:facilitator/features/wallet/presentation/screens/bank_details.dart';
-import 'package:facilitator/features/wallet/presentation/screens/card_details.dart';
-import 'package:facilitator/features/wallet/presentation/screens/fund_wallet.dart';
-import 'package:facilitator/features/wallet/presentation/screens/fund_with_bank.dart';
-import 'package:facilitator/features/wallet/presentation/screens/fund_with_card.dart';
-import 'package:facilitator/features/wallet/presentation/screens/funding_success_or_failure_screen.dart';
-import 'package:facilitator/features/wallet/presentation/screens/wallet.dart';
-import 'package:facilitator/features/withdraw_from_wallet/presentation/screens/amount_to_withdraw.dart';
-import 'package:facilitator/features/withdraw_from_wallet/presentation/screens/select_bank_to_withdraw_from.dart';
-import 'package:facilitator/features/withdraw_from_wallet/presentation/screens/withdraw_from_wallet.dart';
-import 'package:facilitator/features/withdraw_from_wallet/presentation/screens/withdrawal_success_or_failure.dart';
-import 'package:flutter/material.dart';
-
-import '../../core/widgets/error_screen.dart';
-import '../../features/auth/presentation/screens/forgot_password.dart';
-import '../../features/auth/presentation/screens/login_screen.dart';
-import '../../features/auth/presentation/screens/otp_screen.dart';
-import '../../features/auth/presentation/screens/reset_password.dart';
-import '../../features/auth/presentation/screens/signup_screen.dart';
-import '../../features/auth/presentation/screens/verification_successful.dart';
-import 'routes.dart';
+import "../../router_exports.dart";
+import "routes.dart";
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings routeSettings) {
@@ -77,6 +33,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const VerificationSuccessfulScreen(),
         );
+
       case Routes.forgotPassword:
         return MaterialPageRoute(
           builder: (_) => const ForgotPasswordScreen(),
@@ -84,6 +41,10 @@ class AppRouter {
       case Routes.resetPassword:
         return MaterialPageRoute(
           builder: (_) => const ResetPasswordScreen(),
+        );
+      case Routes.passwordChangeSuccessful:
+        return MaterialPageRoute(
+          builder: (_) => const PasswordChangeSuccessfulScreen(),
         );
       case Routes.home:
         return MaterialPageRoute(
@@ -223,6 +184,19 @@ class AppRouter {
       case Routes.selectChannelCategory:
         return MaterialPageRoute(
           builder: (_) => const SelectChannelCategoryScreen(),
+        );
+
+      case Routes.userVerification:
+        return MaterialPageRoute(
+          builder: (_) => const UserVerificationScreen(),
+        );
+      case Routes.notifications:
+        return MaterialPageRoute(
+          builder: (_) => const NotificationScreen(),
+        );
+      case Routes.inProgress:
+        return MaterialPageRoute(
+          builder: (_) => const InProgressScreen(),
         );
       default:
         return MaterialPageRoute(

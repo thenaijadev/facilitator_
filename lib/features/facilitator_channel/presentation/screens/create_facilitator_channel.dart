@@ -1,48 +1,82 @@
-import 'package:facilitator/app/widgets/primary_button.dart';
-import 'package:facilitator/config/router/routes.dart';
-import 'package:facilitator/core/widgets/text_widget.dart';
-import 'package:facilitator/features/facilitator_channel/presentation/widgets/outline_button.dart';
+import 'package:facilitator/features/facilitator_channel/presentation/widgets/outlined_button_widget.dart';
 import 'package:flutter/material.dart';
 
-class CreateFacilitatorChannel extends StatelessWidget {
+import '../../../../app/widgets/primary_button.dart';
+import '../../../../config/router/routes.dart';
+import '../../../../core/widgets/text_widget.dart';
+
+class CreateFacilitatorChannel extends StatefulWidget {
   const CreateFacilitatorChannel({super.key});
 
   @override
+  State<CreateFacilitatorChannel> createState() =>
+      _CreateFacilitatorChannelState();
+}
+
+class _CreateFacilitatorChannelState extends State<CreateFacilitatorChannel> {
+  bool isFirstTapped = true;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/images/amico.png'),
-              const SizedBox(height: 70),
-              const TextWidget(
-                text: 'Create your First Channel!',
-                fontSize: 27,
+              const Spacer(),
+              Image.asset(
+                "assets/images/amico.png",
+              ),
+              const Spacer(),
+              TextWidget(
+                text: "Create your First Channel!",
+                textAlign: TextAlign.center,
+                fontSize: 25,
                 fontWeight: FontWeight.w500,
+                color: Theme.of(context).colorScheme.primary,
               ),
-              const SizedBox(height: 20),
-              OutlineButton(
-                image: 'assets/images/ai.png',
-                label: 'Ask Albert to create your Channel',
-                onTap: () {},
+              const SizedBox(
+                height: 20,
               ),
-              const SizedBox(height: 10),
-              OutlineButton(
-                image: 'assets/images/create.png',
-                label: 'Create your Channel manually',
-                onTap: () {},
-              ),
-              const SizedBox(height: 20),
-              PrimaryButton(
-                label: 'Get Started',
-                onPressed: () {
-                  Navigator.pushNamed(context, Routes.createChannelManually);
+              OutlinedIconButtonWidget(
+                onTap: () {
+                  setState(() {
+                    isFirstTapped = true;
+                  });
                 },
-                isEnabled: true,
+                image: "assets/images/ai.png",
+                label: "Ask Albert to create your Channel",
+                isTapped: isFirstTapped,
               ),
+              const SizedBox(
+                height: 10,
+              ),
+              OutlinedIconButtonWidget(
+                onTap: () {
+                  setState(() {
+                    isFirstTapped = false;
+                  });
+                },
+                image: "assets/images/document_add.png",
+                label: "Create your channel manually",
+                isTapped: !isFirstTapped,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              PrimaryButton(
+                  label: "Get Started",
+                  onPressed: () {
+                    if (isFirstTapped) {
+                      Navigator.pushNamed(context, Routes.aiCreateStore);
+                    } else {
+                      Navigator.pushNamed(
+                          context, Routes.createChannelManually);
+                    }
+                  },
+                  isEnabled: true),
+              const Spacer(),
             ],
           ),
         ),
