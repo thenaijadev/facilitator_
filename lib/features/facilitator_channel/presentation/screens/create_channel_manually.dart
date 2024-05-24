@@ -141,7 +141,9 @@ class _ChannelCreationScreenState extends State<ChannelCreationScreen> {
                       const SizedBox(height: 77),
                       PrimaryButton(
                         label: 'Submit',
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, Routes.channelManual);
+                        },
                         isEnabled: true,
                       ),
                     ],

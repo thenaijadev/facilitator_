@@ -198,6 +198,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const InProgressScreen(),
         );
+      case Routes.channelManual:
+        return MaterialPageRoute(
+          builder: (_) => const MyChannelManual(),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => const ErrorScreen(),

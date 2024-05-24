@@ -34,6 +34,7 @@ class Routes {
   static const String createFacilitatorChannel = '/createFacilitatorChannel';
   static const String createChannelManually = '/createChannelManually';
   static const String selectChannelCategory = '/selectChannelCategory';
+  static const String channelManual = '/channelManual';
 
   //Store
   static const String firstStoreCreation = '/firstStoreCreation';

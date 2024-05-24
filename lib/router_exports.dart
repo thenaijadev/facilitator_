@@ -1,3 +1,4 @@
+export "package:facilitator/features/facilitator_channel/presentation/screens/manual_channel.dart";
 export "package:facilitator/core/widgets/error_screen.dart";
 export 'package:facilitator/features/auth/presentation/screens/facilitator_profile_screen.dart';
 export "package:facilitator/features/auth/presentation/screens/forgot_password.dart";
