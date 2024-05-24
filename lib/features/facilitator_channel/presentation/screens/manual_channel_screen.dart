@@ -1,7 +1,9 @@
 import 'package:facilitator/core/constants/app_colors.dart';
 import 'package:facilitator/core/utils/size_config.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
+import 'package:facilitator/features/facilitator_channel/presentation/widgets/channel_details_widget.dart';
 import 'package:facilitator/features/facilitator_channel/presentation/widgets/resizeable_button.dart';
+import 'package:facilitator/features/facilitator_channel/presentation/widgets/tab_item_widget.dart';
 import 'package:facilitator/features/home/presentation/widgets/menu_widget.dart';
 import 'package:facilitator/features/home/presentation/widgets/navbar_widget.dart';
 import 'package:facilitator/router_exports.dart';
@@ -342,60 +344,4 @@ Stack _buildImageStack() {
       ),
     ],
   );
-}
-
-class ChannelDetails extends StatelessWidget {
-  const ChannelDetails({
-    super.key,
-    required this.icon,
-    required this.label,
-  });
-  final String icon;
-  final String label;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Image.asset(
-          icon,
-          width: 24,
-          color: Theme.of(context).colorScheme.primary,
-        ),
-        const SizedBox(
-          width: 25,
-        ),
-        TextWidget(
-          text: label,
-          fontSize: 16,
-        ),
-      ],
-    );
-  }
-}
-
-class TabItemWidget extends StatelessWidget {
-  const TabItemWidget(
-      {super.key,
-      required this.onTap,
-      required this.isChosen,
-      required this.label});
-  final VoidCallback onTap;
-  final bool isChosen;
-  final String label;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: TextWidget(
-        text: label,
-        onTap: onTap,
-        fontWeight: FontWeight.w500,
-        fontSize: 21,
-        color: isChosen
-            ? Theme.of(context).colorScheme.primary
-            : const Color.fromARGB(70, 3, 14, 79),
-      ),
-    );
-  }
 }
