@@ -127,4 +127,10 @@ class Routes {
   static const String requestMoney = '/requestMoney';
   static const String selectRecipient = '/selectRecipient';
   static const String amountRequest = '/amountRequest';
+
+  //manual content creation
+  static const String manualContentPromotion = '/manualContentPromotion';
+  static const String addDescription = '/addDescription';
+  static const String selectAudience = '/selectAudience';
+  static const String selectDuration = '/selectDuration';
 }

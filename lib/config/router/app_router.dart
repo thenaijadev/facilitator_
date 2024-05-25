@@ -1,3 +1,7 @@
+import "package:facilitator/features/promote_content/presentation/screens/add_description_screen.dart";
+import "package:facilitator/features/promote_content/presentation/screens/audience_screen.dart";
+import "package:facilitator/features/promote_content/presentation/screens/duration_screen.dart";
+import "package:facilitator/features/promote_content/presentation/screens/promote_content_manually_screen.dart";
 import "package:flutter/material.dart";
 
 import "../../router_exports.dart";
@@ -203,6 +207,22 @@ class AppRouter {
       case Routes.channelManual:
         return MaterialPageRoute(
           builder: (_) => const MyChannelManual(),
+        );
+      case Routes.manualContentPromotion:
+        return MaterialPageRoute(
+          builder: (_) => const ManualContentPromotionScreen(),
+        );
+      case Routes.addDescription:
+        return MaterialPageRoute(
+          builder: (_) => const AddDescriptionScreen(),
+        );
+      case Routes.selectAudience:
+        return MaterialPageRoute(
+          builder: (_) => const AudienceScreen(),
+        );
+      case Routes.selectDuration:
+        return MaterialPageRoute(
+          builder: (_) => const DurationScreen(),
         );
       default:
         return MaterialPageRoute(

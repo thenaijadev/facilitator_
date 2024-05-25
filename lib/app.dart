@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           theme: lightTheme(),
           debugShowCheckedModeBanner: false,
           // initialRoute: Routes.login,
-          initialRoute: Routes.facilitatorChannel,
+          initialRoute: Routes.manualContentPromotion,
 
           onGenerateRoute: appRouter.onGenerateRoute,
         ));
