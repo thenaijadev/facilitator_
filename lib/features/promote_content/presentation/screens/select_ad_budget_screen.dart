@@ -1,4 +1,5 @@
 import 'package:facilitator/app/widgets/primary_button.dart';
+import 'package:facilitator/config/router/routes.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +69,12 @@ class _SelectAdBudgetState extends State<SelectAdBudget> {
                 if (!isInternal) _buildExternalPlans(context),
               ],
             ),
-            PrimaryButton(label: "Review Ad", onPressed: () {}, isEnabled: true)
+            PrimaryButton(
+                label: "Review Ad",
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.reviewAd);
+                },
+                isEnabled: true)
           ],
         ),
       ),

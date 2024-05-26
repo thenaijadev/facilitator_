@@ -135,4 +135,7 @@ class Routes {
   static const String selectDuration = '/selectDuration';
   static const String selectAdBudget = '/selectAdBudget';
   static const String reviewAd = '/reviewAd';
+  static const String payForAd = '/payForAd';
+  static const String internalTotalReach = '/internalTotalReach';
+  static const String externalTotalReach = '/externalTotalReach';
 }

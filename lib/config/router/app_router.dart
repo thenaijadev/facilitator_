@@ -1,3 +1,6 @@
+import "package:facilitator/features/promote_content/presentation/screens/external_total_reach_screen.dart";
+import "package:facilitator/features/promote_content/presentation/screens/internal_total_reach_screen.dart";
+import "package:facilitator/features/promote_content/presentation/screens/payment_screen.dart";
 import "package:flutter/material.dart";
 
 import "../../router_exports.dart";
@@ -227,6 +230,18 @@ class AppRouter {
       case Routes.reviewAd:
         return MaterialPageRoute(
           builder: (_) => const ReviewAdScreen(),
+        );
+      case Routes.payForAd:
+        return MaterialPageRoute(
+          builder: (_) => const PaymentScreen(),
+        );
+      case Routes.internalTotalReach:
+        return MaterialPageRoute(
+          builder: (_) => const InternalTotalReachScreen(),
+        );
+      case Routes.externalTotalReach:
+        return MaterialPageRoute(
+          builder: (_) => const ExternalTotalReachScreen(),
         );
       default:
         return MaterialPageRoute(
