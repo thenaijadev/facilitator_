@@ -6,7 +6,6 @@ import 'package:facilitator/core/widgets/text_widget.dart';
 import 'package:facilitator/features/auth/presentation/widgets/input_field_widget.dart';
 import 'package:facilitator/features/promote_content/presentation/widgets/dropdown_input_field_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class AudienceScreen extends StatefulWidget {
   const AudienceScreen({super.key});

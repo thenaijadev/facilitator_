@@ -1,5 +1,5 @@
-import 'package:facilitator/core/widgets/text_widget.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:facilitator/core/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class VerificationItem extends StatelessWidget {

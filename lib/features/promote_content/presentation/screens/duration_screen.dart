@@ -1,9 +1,7 @@
 import 'package:facilitator/app/widgets/primary_button.dart';
 import 'package:facilitator/core/constants/app_colors.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class DurationScreen extends StatefulWidget {
   const DurationScreen({super.key});

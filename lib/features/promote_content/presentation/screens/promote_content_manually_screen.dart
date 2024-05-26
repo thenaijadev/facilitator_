@@ -55,26 +55,26 @@ class _ManualContentPromotionScreenState
                               children: [
                                 Image.asset('assets/images/coffee_beans.png'),
                                 const SizedBox(width: 10),
-                                const TextWidget(
-                                  text: 'How to run a coffee \nBusiness',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
+                                const Flexible(
+                                  child: TextWidget(
+                                    text: 'How to run a coffee \nBusiness',
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                               ],
                             ),
                           ),
-                          Flexible(
-                            child: Transform.scale(
-                              scale: 1.5,
-                              child: Radio<int>(
-                                value: 1,
-                                groupValue: _value,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _value = value!;
-                                  });
-                                },
-                              ),
+                          Transform.scale(
+                            scale: 1.5,
+                            child: Radio<int>(
+                              value: 1,
+                              groupValue: _value,
+                              onChanged: (value) {
+                                setState(() {
+                                  _value = value!;
+                                });
+                              },
                             ),
                           ),
                         ],
@@ -101,26 +101,26 @@ class _ManualContentPromotionScreenState
                               children: [
                                 Image.asset('assets/images/coffee_beans.png'),
                                 const SizedBox(width: 10),
-                                const TextWidget(
-                                  text: 'How to run a coffee \nBusiness',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
+                                const Flexible(
+                                  child: TextWidget(
+                                    text: 'How to run a coffee \nBusiness',
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                               ],
                             ),
                           ),
-                          Flexible(
-                            child: Transform.scale(
-                              scale: 1.5,
-                              child: Radio<int>(
-                                value: 2,
-                                groupValue: _value,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _value = value!;
-                                  });
-                                },
-                              ),
+                          Transform.scale(
+                            scale: 1.5,
+                            child: Radio<int>(
+                              value: 2,
+                              groupValue: _value,
+                              onChanged: (value) {
+                                setState(() {
+                                  _value = value!;
+                                });
+                              },
                             ),
                           ),
                         ],
@@ -155,18 +155,16 @@ class _ManualContentPromotionScreenState
                               ],
                             ),
                           ),
-                          Flexible(
-                            child: Transform.scale(
-                              scale: 1.5,
-                              child: Radio<int>(
-                                value: 3,
-                                groupValue: _value,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _value = value!;
-                                  });
-                                },
-                              ),
+                          Transform.scale(
+                            scale: 1.5,
+                            child: Radio<int>(
+                              value: 3,
+                              groupValue: _value,
+                              onChanged: (value) {
+                                setState(() {
+                                  _value = value!;
+                                });
+                              },
                             ),
                           ),
                         ],
@@ -201,18 +199,16 @@ class _ManualContentPromotionScreenState
                               ],
                             ),
                           ),
-                          Flexible(
-                            child: Transform.scale(
-                              scale: 1.5,
-                              child: Radio<int>(
-                                value: 4,
-                                groupValue: _value,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _value = value!;
-                                  });
-                                },
-                              ),
+                          Transform.scale(
+                            scale: 1.5,
+                            child: Radio<int>(
+                              value: 4,
+                              groupValue: _value,
+                              onChanged: (value) {
+                                setState(() {
+                                  _value = value!;
+                                });
+                              },
                             ),
                           ),
                         ],

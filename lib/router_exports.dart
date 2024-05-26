@@ -1,4 +1,3 @@
-export "package:facilitator/features/facilitator_channel/presentation/screens/manual_channel_screen.dart";
 export "package:facilitator/core/widgets/error_screen.dart";
 export 'package:facilitator/features/auth/presentation/screens/facilitator_profile_screen.dart';
 export "package:facilitator/features/auth/presentation/screens/forgot_password.dart";
@@ -18,6 +17,7 @@ export 'package:facilitator/features/customer_support/presentation/screens/custo
 export 'package:facilitator/features/facilitator_channel/presentation/screens/create_channel_manually.dart';
 export 'package:facilitator/features/facilitator_channel/presentation/screens/create_facilitator_channel.dart';
 export 'package:facilitator/features/facilitator_channel/presentation/screens/facilitator_channel.dart';
+export "package:facilitator/features/facilitator_channel/presentation/screens/manual_channel_screen.dart";
 export 'package:facilitator/features/facilitator_channel/presentation/screens/select_channel_category.dart';
 export 'package:facilitator/features/home/presentation/screens/channel_overview_screen.dart';
 export 'package:facilitator/features/home/presentation/screens/home_screen.dart';

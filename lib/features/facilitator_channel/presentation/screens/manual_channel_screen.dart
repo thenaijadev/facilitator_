@@ -176,7 +176,7 @@ class _MyChannelManualState extends State<MyChannelManual> {
                               fontWeight: FontWeight.w500,
                             ),
                             TextWidget(
-                              text: 'Facilitator',
+                              text: 'facilitator',
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
                             ),

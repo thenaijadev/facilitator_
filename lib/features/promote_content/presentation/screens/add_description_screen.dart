@@ -45,26 +45,28 @@ class _AddDescriptionScreenState extends State<AddDescriptionScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        Image.asset('assets/images/photo.png'),
-                        const SizedBox(width: 10),
-                        const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            TextWidget(
-                              text: 'John Doe',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            TextWidget(
-                              text: 'Business Facilitator',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ],
-                        ),
-                      ],
+                    Flexible(
+                      child: Row(
+                        children: [
+                          Image.asset('assets/images/photo.png'),
+                          const SizedBox(width: 10),
+                          const Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              TextWidget(
+                                text: 'John Doe',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                              ),
+                              TextWidget(
+                                text: 'Business facilitator',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                     const TextWidget(
                       text: 'Sponsored',
