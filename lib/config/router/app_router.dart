@@ -1,7 +1,3 @@
-import "package:facilitator/features/promote_content/presentation/screens/add_description_screen.dart";
-import "package:facilitator/features/promote_content/presentation/screens/audience_screen.dart";
-import "package:facilitator/features/promote_content/presentation/screens/duration_screen.dart";
-import "package:facilitator/features/promote_content/presentation/screens/promote_content_manually_screen.dart";
 import "package:flutter/material.dart";
 
 import "../../router_exports.dart";
@@ -223,6 +219,14 @@ class AppRouter {
       case Routes.selectDuration:
         return MaterialPageRoute(
           builder: (_) => const DurationScreen(),
+        );
+      case Routes.selectAdBudget:
+        return MaterialPageRoute(
+          builder: (_) => const SelectAdBudget(),
+        );
+      case Routes.reviewAd:
+        return MaterialPageRoute(
+          builder: (_) => const ReviewAdScreen(),
         );
       default:
         return MaterialPageRoute(

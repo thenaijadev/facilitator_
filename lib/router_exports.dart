@@ -46,3 +46,10 @@ export 'package:facilitator/features/withdraw_from_wallet/presentation/screens/a
 export 'package:facilitator/features/withdraw_from_wallet/presentation/screens/select_bank_to_withdraw_from.dart';
 export 'package:facilitator/features/withdraw_from_wallet/presentation/screens/withdraw_from_wallet.dart';
 export 'package:facilitator/features/withdraw_from_wallet/presentation/screens/withdrawal_success_or_failure.dart';
+
+export "package:facilitator/features/promote_content/presentation/screens/add_description_screen.dart";
+export "package:facilitator/features/promote_content/presentation/screens/audience_screen.dart";
+export "package:facilitator/features/promote_content/presentation/screens/duration_screen.dart";
+export "package:facilitator/features/promote_content/presentation/screens/promote_content_manually_screen.dart";
+export "package:facilitator/features/promote_content/presentation/screens/review_ad_screen.dart";
+export "package:facilitator/features/promote_content/presentation/screens/select_ad_budget_screen.dart";

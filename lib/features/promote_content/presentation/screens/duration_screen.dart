@@ -1,4 +1,5 @@
 import 'package:facilitator/app/widgets/primary_button.dart';
+import 'package:facilitator/config/router/routes.dart';
 import 'package:facilitator/core/constants/app_colors.dart';
 import 'package:facilitator/core/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +64,19 @@ class _DurationScreenState extends State<DurationScreen> {
                           )
                         ],
                       ),
-                      Image.asset('assets/images/Calendar.png'),
+                      GestureDetector(
+                          onTap: () async {
+                            DateTime? pickedDate = await showDatePicker(
+                              context: context,
+                              firstDate: startDate,
+                              lastDate: DateTime(2025),
+                            );
+                            if (pickedDate != null) {
+                              _dateController.text =
+                                  pickedDate.toString().split(' ')[0];
+                            }
+                          },
+                          child: Image.asset('assets/images/Calendar.png')),
                     ],
                   ),
                 ),
@@ -146,12 +159,26 @@ class _DurationScreenState extends State<DurationScreen> {
                   ],
                 ),
                 const SizedBox(height: 20),
+                Center(
+                  child: Container(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                    child: TextWidget(
+                      text: "${value.floor()} Hrs",
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                  ),
+                ),
                 Transform.translate(
                   offset: const Offset(-10, 0),
                   child: Slider(
                     value: value,
                     min: 0,
-                    max: 60,
+                    max: 24,
                     activeColor: AppColors.primary,
                     inactiveColor: AppColors.inputGrey,
                     label: value.round().toString(),
@@ -184,11 +211,12 @@ class _DurationScreenState extends State<DurationScreen> {
                 ),
               ],
             ),
-            Opacity(
-              opacity: .3,
-              child: PrimaryButton(
-                  label: "Select ad budget", onPressed: () {}, isEnabled: true),
-            ),
+            PrimaryButton(
+                label: "Select ad budget",
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.selectAdBudget);
+                },
+                isEnabled: true),
           ],
         ),
       ),
